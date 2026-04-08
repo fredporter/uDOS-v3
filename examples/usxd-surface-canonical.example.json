@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "usxd/0.1",
+  "id": "example-canonical-panel",
+  "type": "surface",
+  "title": "Canonical panel (80×30, teletext)",
+  "kind": "panel",
+  "mode": "canonical",
+  "grid": {
+    "cols": 80,
+    "rows": 30,
+    "tile_px": { "w": 16, "h": 24 }
+  },
+  "render": { "mode": "teletext" },
+  "teletext": {
+    "cell_width": 16,
+    "cell_height": 24,
+    "mosaic": { "cols": 2, "rows": 3, "style": "acorn" },
+    "fallback": ["ascii-block", "shades", "ascii"]
+  },
+  "ascii": { "mono": true },
+  "regions": [
+    { "id": "header", "x": 0, "y": 0, "w": 80, "h": 3, "role": "header" },
+    { "id": "primary", "x": 0, "y": 3, "w": 80, "h": 24, "role": "primary" },
+    { "id": "status", "x": 0, "y": 27, "w": 80, "h": 3, "role": "status" }
+  ]
+}

@@ -28,6 +28,7 @@ Not the whole uDOS family. Not the full product vision. **One clean loop.**
 | [docs/QUICKSTART.md](docs/QUICKSTART.md) | First-time setup + install/run path |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Boundaries, data flow, module contracts |
 | [docs/GRID-GRAPHICS-CANON.md](docs/GRID-GRAPHICS-CANON.md) | **Locked** 80×30 grid, **16×24** tiles, teletext bridge, UniversalSurfaceXD pairing |
+| [docs/DISPLAY_STACK.md](docs/DISPLAY_STACK.md) | Router for USXD, View/Render/Grid/Teletext/Spatial/Style specs |
 | [docs/DEMO.md](docs/DEMO.md) | Gold-path scenario, expected outputs, operator steps |
 | [docs/DATA-MODEL.md](docs/DATA-MODEL.md) | Persistence layout, schemas, truth model |
 | [docs/WP-BRIDGE.md](docs/WP-BRIDGE.md) | Empire ↔ WordPress bridge design |
@@ -38,7 +39,7 @@ Not the whole uDOS family. Not the full product vision. **One clean loop.**
 
 ## Schemas (first draft)
 
-JSON Schema drafts live in [`packages/schemas/`](packages/schemas/): `feed`, `task`, `event`, `contact`, `user-link`, `provider-policy`.
+JSON Schema drafts live in [`packages/schemas/`](packages/schemas/): **`usxd-surface`** (`usxd/0.1`), `feed`, `task`, `event`, `contact`, `user-link`, `provider-policy`. Example surface: [`examples/usxd-surface-canonical.example.json`](examples/usxd-surface-canonical.example.json).
 
 ## Relation to uDOS-family
 

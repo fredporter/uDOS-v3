@@ -9,6 +9,22 @@
 - SQLite (or single-DB) consolidation for tasks + events if file sprawl hurts.
 - Second demo scenario (import inbox, PDF note, email thread) reusing same schemas.
 
+## Display stack (confirmed specs → code)
+
+**Docs:** [DISPLAY_STACK.md](DISPLAY_STACK.md) — router for GRID-GRAPHICS-CANON, USXD, View/Render/Grid/Teletext/Spatial/Style guides.
+
+**Done in repo (baseline):**
+
+- `packages/shared` — `USXD_SCHEMA_VERSION`, mosaic + fallback ladder constants beside viewport/tile px.
+- `packages/schemas/usxd-surface.schema.json` — JSON Schema subset for `usxd/0.1` surface documents.
+- `examples/usxd-surface-canonical.example.json` — canonical 80×30 teletext example.
+
+**Next (implementation):**
+
+- CI or `npm` script: validate example + future surfaces with AJV (or equivalent) against `usxd-surface.schema.json`.
+- ThinUI / Host: optional `surfaceRef` or embedded layout metadata on operator views using CSS vars + shared constants.
+- Teletext preview component (mosaic 2×3) as a dev-only or labs route when ready.
+
 ## Active tranche (resumed)
 
 Backlog execution is resumed and tracked in [BACKLOG.md](BACKLOG.md) under **"Active: v3.0.2 backlog"** with P0/P1/P2 priorities.

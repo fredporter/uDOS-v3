@@ -134,7 +134,7 @@
 
 Operator UI and portable surface documents share one **grid–graphics** contract: **80×30** viewport, **16×24 px** per cell, **teletext 2×3** as the canonical graphics bridge, and **UniversalSurfaceXD** for cross-runtime surface declarations. Themes are **render dialects**, not alternate architectures.
 
-**Authoritative detail:** [GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md) (this monorepo) and the sibling **[UniversalSurfaceXD](../../UniversalSurfaceXD/docs/decisions/UniversalSurfaceXD_v2-cannon.md)** canon (full schema narrative, regions, feed/story/slide family).
+**Authoritative detail:** [GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md), spec index [DISPLAY_STACK.md](DISPLAY_STACK.md), and sibling **[UniversalSurfaceXD](../../UniversalSurfaceXD/docs/decisions/UniversalSurfaceXD_v2-cannon.md)** (full portable surface narrative).
 
 ---
 

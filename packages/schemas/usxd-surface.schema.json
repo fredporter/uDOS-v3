@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://udos.local/schema/usxd-surface-0.1.json",
+  "title": "USXD surface document (subset)",
+  "description": "Minimal portable surface declaration aligned with docs/usxd_schema.md and GRID-GRAPHICS-CANON. Not a full UniversalSurfaceXD interchange bundle.",
+  "type": "object",
+  "required": ["schemaVersion", "id", "type", "kind"],
+  "additionalProperties": true,
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "usxd/0.1"
+    },
+    "id": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "const": "surface" },
+    "title": { "type": "string" },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "launcher",
+        "panel",
+        "table",
+        "list",
+        "board",
+        "timeline",
+        "feed",
+        "story",
+        "step-form",
+        "slide",
+        "map",
+        "workflow",
+        "recovery",
+        "handoff"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["canonical", "adaptive"],
+      "default": "canonical"
+    },
+    "place": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "place_ref": { "type": ["string", "null"] }
+      }
+    },
+    "grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cols", "rows", "tile_px"],
+      "properties": {
+        "cols": { "type": "integer", "minimum": 1 },
+        "rows": { "type": "integer", "minimum": 1 },
+        "tile_px": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["w", "h"],
+          "properties": {
+            "w": { "type": "integer", "minimum": 1 },
+            "h": { "type": "integer", "minimum": 1 }
+          }
+        }
+      }
+    },
+    "render": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["grid", "ascii", "teletext"]
+        }
+      }
+    },
+    "teletext": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "cell_width": { "type": "integer" },
+        "cell_height": { "type": "integer" },
+        "mosaic": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "cols": { "type": "integer" },
+            "rows": { "type": "integer" },
+            "style": { "type": "string" }
+          }
+        },
+        "fallback": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "ascii": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "mono": { "type": "boolean" }
+      }
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "x", "y", "w", "h", "role"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string" },
+          "x": { "type": "integer", "minimum": 0 },
+          "y": { "type": "integer", "minimum": 0 },
+          "w": { "type": "integer", "minimum": 1 },
+          "h": { "type": "integer", "minimum": 1 },
+          "role": {
+            "type": "string",
+            "enum": [
+              "header",
+              "nav",
+              "primary",
+              "secondary",
+              "status",
+              "footer",
+              "overlay",
+              "modal",
+              "canvas",
+              "legend",
+              "inspector",
+              "timeline",
+              "queue",
+              "controls"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

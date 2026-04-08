@@ -2,7 +2,8 @@
 
 **Status:** locked for uDOS v3  
 **Updated:** 2026-04-09  
-**Pair spec:** [UniversalSurfaceXD v2 canon](../../UniversalSurfaceXD/docs/decisions/UniversalSurfaceXD_v2-cannon.md) (portable surface declaration, same geometry and rules)
+**Spec index:** [DISPLAY_STACK.md](DISPLAY_STACK.md)  
+**Pair spec:** [UniversalSurfaceXD v2 cannon](../../UniversalSurfaceXD/docs/decisions/UniversalSurfaceXD_v2-cannon.md) (portable surface declaration; filename uses **cannon**)
 
 This document is the **implementation-facing** copy of the grid–graphics contract for the **uDOS-v3 monorepo** (Host, Hivemind, ThinUI, schemas). **UniversalSurfaceXD** carries the cross-repo, transportable surface schema narrative; both stay aligned.
 
@@ -10,7 +11,20 @@ This document is the **implementation-facing** copy of the grid–graphics contr
 
 ## Canon (drop-in wording)
 
-uDOS v3 defines interactive and document-linked surfaces through a shared **grid–graphics model**. The canonical surface grid is **80×30**. Each grid cell is rendered as a **16×24 px** internal tile raster. The canonical graphics encoding for tile art is the **teletext 2×3 mosaic mask** model, with a required fallback ladder of **Teletext → ASCII block → Shades → ASCII**.
+uDOS v3 defines interactive and document-linked surfaces through a shared **grid–graphics model**. The canonical surface grid is **80×30** (character grid). Each grid cell is rendered as a **16×24 px raster cell**.
+
+The canonical 80×30 grid is a **character grid (rendering grid)**, not the spatial layout grid used by the Grid Engine.
+
+CELL
+  = raster unit (16×24 px)
+
+GRID CELL
+  = position in character grid
+
+TILE
+  = logical surface unit (may map to one or more grid cells)
+
+The canonical graphics encoding for tile art is the **teletext 2×3 mosaic mask** model, with a required fallback ladder of **Teletext → ASCII block → Shades → ASCII**.
 
 Spatial identity is expressed independently of rendering through **LocId** and **PlaceRef**. Surface composition is expressed through **UniversalSurfaceXD**, the portable surface declaration format shared across TUI, ThinUI, browser, Markdown, and SVG export targets. **Themes and adapters** map the same canonical surface into different render dialects without altering semantics.
 
@@ -36,7 +50,13 @@ Spatial identity is expressed independently of rendering through **LocId** and *
 
 - **Text-first surfaces** match retro terminal and monospace proportions better than a 16×16 fiction.
 - **Teletext 2×3** divides the tile cleanly: **16 → 8 px** per column, **24 → 8 px** per row → **8×8 px** per teletext subcell inside one cell.
-- **Wide glyphs / emoji** use a **2×1** cell footprint → **32×24 px**, which stays visually coherent.
+- Wide glyph rule:
+
+  - width = 2 cells
+  - height = 1 cell
+  - raster = 32×24 px
+
+  This ensures wide glyphs (e.g. emoji) remain visually coherent.
 
 ---
 
@@ -87,7 +107,7 @@ Layers remain canonical and transportable. Surface UIs use the same grid vocabul
 ## Feed / spool layer
 
 - **Feeds** = meaningful **change streams** (distinct from execution **logs**).
-- **Spools** = local retention/transformation; not canonical memory by themselves.
+- **Spools** = local buffering and transformation layer (non-canonical); not canonical memory by themselves.
 - Feed-oriented UIs (browser, digest, spool manager) are **first-class** surface kinds, not log viewers dressed as feeds.
 
 ---
@@ -107,7 +127,7 @@ Integrated bootstrap types + sample (legacy `cell` replaced by **tile width/heig
 
 ## Region roles (composition)
 
-Surfaces compose from a shared set of region **roles**: header, nav, primary, secondary, status, footer, overlay, modal, canvas, legend, inspector, timeline, queue, controls. Kinds differ by which roles appear (feed vs step-form vs map vs workflow — see USXD §12).
+Surfaces compose from a shared set of canonical region **roles**: header, nav, primary, secondary, status, footer, overlay, modal, canvas, legend, inspector, timeline, queue, controls. Kinds differ by which roles appear (feed vs step-form vs map vs workflow — see USXD §12).
 
 ---
 
@@ -127,6 +147,9 @@ Theme families (examples: **thinui-c64**, **thinui-teletext**, **thinui-nes-soni
 
 ## See also
 
+- [DISPLAY_STACK.md](DISPLAY_STACK.md) — display / grid / teletext doc router  
 - [ARCHITECTURE.md](ARCHITECTURE.md) — system boundaries  
 - [README.md](README.md) — doc index  
 - [DATA-MODEL.md](DATA-MODEL.md) — disk and schema layout  
+- [usxd_schema.md](usxd_schema.md) — USXD YAML schema (human spec)  
+- `packages/schemas/usxd-surface.schema.json` — JSON Schema subset `usxd/0.1`  

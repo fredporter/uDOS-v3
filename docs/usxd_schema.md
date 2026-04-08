@@ -1,179 +1,174 @@
-# USXD Schema — uDOS v3
+# USXD Schema — uDOS v3 (confirmed)
+
+**Confirmed:** 2026-04-09 · **Index:** [DISPLAY_STACK.md](DISPLAY_STACK.md) · **Canon:** [GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md)  
+**JSON Schema:** `packages/schemas/usxd-surface.schema.json` (`schemaVersion`: **`usxd/0.1`**)
+
+---
+
+# 0. Scale model (must not conflate)
+
+```text
+SPATIAL LAYOUT
+  = tiles / maps / regions as integer (x,y,w,h)
+  = abstract; not pixel-bound
+
+CHARACTER GRID
+  = cols × rows of logical cells for ASCII / teletext
+  = uDOS canonical: 80 × 30 (mini: 40 × 15)
+
+RASTER CELL (teletext)
+  = 16 px × 24 px per character cell
+  = 2 × 3 mosaic blocks inside (8×8 px per subcell)
+```
+
+USXD may carry **both** a character `grid` (for render) and **spatial** `objects` (for layout). They are related by **projection**, not identity.
 
 ---
 
 # 1. Overview
 
-USXD (Universal Surface XD) is the canonical **surface + layout schema** for uDOS v3.
-
-It defines:
-
-- surface structure
-- grid + spatial layout
-- tiles and blocks
-- rendering modes (grid / ascii / teletext / etc.)
-- view types (tile / list / map / story / slide)
-
-USXD is:
-
-- markdown-native
-- human-readable
-- Git-friendly
-- renderer-agnostic
+**USXD** (Universal Surface XD) is the canonical **surface + layout + render binding** schema for uDOS v3 documents. Runtime business state (tasks, events) lives elsewhere; USXD describes **how** a surface is composed and rendered.
 
 ---
 
-# 2. Root Document Schema
+# 2. Root document (YAML frontmatter or JSON)
 
 ```yaml
----
-id: string
-format: usxd
-version: 3
+schemaVersion: "usxd/0.1"
+id: string                    # stable surface id
+type: surface
 title: string
-view: enum
-layer: int
-map_id: string
-created: timestamp
-updated: timestamp
----
+kind: <surface kind>          # see §3
+mode: canonical | adaptive    # canonical = fixed grid for export/tests
+
+# Optional transport identity (when anchored)
+place:
+  place_ref: string | null    # e.g. EARTH:SUR:L305-DA11
+
+created: timestamp | null
+updated: timestamp | null
 ```
 
+- **`schemaVersion`:** use **`usxd/0.1`** for new documents; validate with `usxd-surface.schema.json`.
+- **`mode`:** **`canonical`** requires **`grid.cols` = 80** and **`grid.rows` = 30** and **`tile_px` = 16×24** unless a documented exception applies.
+
 ---
 
-# 3. View Types
+# 3. Surface kinds (first class)
+
+Aligned with [GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md):
 
 ```text
-tile
-list
-map
-form
-ascii
-teletext
+launcher
+panel
 table
-slide
+list
+board
+timeline
+feed
 story
-task
+step-form      # input-first; one primary action per step when multi-step
+slide
+map
+workflow
+recovery
+handoff
 ```
 
-Rules:
-
-- `view` determines primary renderer
-- multiple views may be derived from same file
+**Story / step-form / slide** share one **content family** (three render emphases); see canon and UniversalSurfaceXD cannon §10.
 
 ---
 
-# 4. Grid Schema
+# 4. Character grid + tile raster
+
+Used when `render.mode` is `ascii` or `teletext`, or when anchoring layout to the canonical viewport.
 
 ```yaml
 grid:
-  cols: 16
-  rows: 24
-  snap: true
-  unit: tile
+  cols: int                   # canonical: 80
+  rows: int                   # canonical: 30
+  tile_px:
+    w: int                    # canonical: 16
+    h: int                    # canonical: 24
 ```
 
-Constraints:
-
-- cols: fixed (16 default)
-- rows: fixed (24 default)
-- coordinates are integer-based
+**Adaptive** surfaces may omit strict 80×30 but must declare explicit `cols`/`rows` for any raster output.
 
 ---
 
-# 5. Tile Schema
+# 5. Spatial layout (Grid Engine objects)
+
+Independent logical grid; often maps 1:1 to character grid for dashboards.
 
 ```yaml
-tiles:
+layout:
+  type: spatial
+  snap: hard | soft | free
+
+objects:
   - id: string
-    type: enum
+    type: note | task | panel | media | map_region | marker | form_block | story_card | slide_block | table | ...
     x: int
     y: int
     w: int
     h: int
     layer: int
-    ref: string
-```
-
-## Tile Types
-
-```text
-note
-task
-media
-map
-table
-ascii
-teletext
-form
-```
-
-Rules:
-
-- tiles must remain within grid bounds
-- tiles may not overlap unless layered
-- higher layer overrides lower
-
----
-
-# 6. Block Schema
-
-Blocks are non-spatial or inline elements.
-
-```yaml
-blocks:
-  - id: string
-    type: enum
-    content: string
-```
-
-Block Types:
-
-```text
-paragraph
-heading
-list
-table
-ascii_block
-teletext_block
-code
+    ref: string | null         # vault link or object id
 ```
 
 ---
 
-# 7. Render Schema
+# 6. Render binding
 
 ```yaml
 render:
-  mode: enum
-  mono: bool
-  ascii: bool
-  teletext: bool
-  density: enum
+  mode: grid | ascii | teletext
 ```
 
-Modes:
+| `mode` | Role |
+| --- | --- |
+| `grid` | Structured layout (Grid Engine / panel composition) |
+| `ascii` | Symbolic monospace on character grid |
+| `teletext` | Mosaic raster on character grid |
 
-```text
-grid
-ascii
-teletext
-list
-slide
-form
+See [view_engine.md](view_engine.md) for view × render matrix.
+
+---
+
+# 7. Teletext block
+
+Required when `render.mode: teletext`.
+
+```yaml
+teletext:
+  cell_width: 16              # px
+  cell_height: 24             # px
+  mosaic:
+    cols: 2
+    rows: 3
+    style: acorn
+  fallback:
+    - ascii-block
+    - shades
+    - ascii
 ```
 
-Density:
+Canonical **fallback ladder** (full text): Teletext → ASCII block → Shades → ASCII ([GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md)).
 
-```text
-low
-medium
-high
+---
+
+# 8. ASCII block
+
+Required when `render.mode: ascii`.
+
+```yaml
+ascii:
+  mono: true
 ```
 
 ---
 
-# 8. Location Schema
+# 9. Location (map view)
 
 ```yaml
 location:
@@ -183,37 +178,38 @@ location:
   layer: int
 ```
 
-Canonical reference:
+Use with `kind: map` or map-bound objects. Prefer **PlaceRef** / **LocId** in canon strings when crossing systems ([GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md)).
 
-```text
-udos://vault/binder/file#block
+---
+
+# 10. Regions (USXD composition)
+
+Optional named rectangles on the **character grid** (0-based), roles from canon:
+
+```yaml
+regions:
+  - id: header
+    x: 0
+    y: 0
+    w: 80
+    h: 3
+    role: header | nav | primary | secondary | status | footer | overlay | modal | canvas | legend | inspector | timeline | queue | controls
 ```
 
 ---
 
-# 9. Layer Schema
+# 11. Layers metadata
 
 ```yaml
 layers:
   - id: int
     name: string
-    opacity: float
     visible: bool
-```
-
-Standard Layers:
-
-```text
-0 → Grid
-1 → Base
-2 → Content
-3 → Overlay
-4 → UI
 ```
 
 ---
 
-# 10. Table Schema
+# 12. Table schema
 
 ```yaml
 table:
@@ -224,131 +220,64 @@ table:
     - [value1, value2]
 ```
 
-Rules:
-
-- columns must be defined first
-- rows must align to column count
-
 ---
 
-# 11. Column Layout Schema
+# 13. Column layout
 
 ```yaml
 columns:
   count: int
   widths: [int]
-  gutter: int
-```
-
-Example:
-
-```yaml
-columns:
-  count: 2
-  widths: [8,8]
-  gutter: 1
 ```
 
 ---
 
-# 12. ASCII Block Schema
-
-```yaml
-ascii:
-  content: string
-  width: int
-  height: int
-```
-
-Rules:
-
-- must be monospace aligned
-- width must match grid container
-
----
-
-# 13. Teletext Block Schema
-
-```yaml
-teletext:
-  content: string
-  region: enum
-```
-
-Regions:
-
-```text
-header
-nav
-main
-data
-status
-footer
-```
-
----
-
-# 14. Time Binding Schema
+# 14. Time binding
 
 ```yaml
 time:
-  created: timestamp
-  updated: timestamp
-  due: timestamp
-  event: string
+  due: timestamp | null
+  start: timestamp | null
+  end: timestamp | null
+  event: string | null
 ```
 
 ---
 
-# 15. Task Binding
+# 15. Validation rules
+
+- **`schemaVersion`** required; **`usxd/0.1`** for new files.
+- **`kind`** must be one of §3.
+- **`grid`** + **`tile_px`** required when `mode: canonical` or when `render.mode` ∈ `{ ascii, teletext }`.
+- **`teletext`** block required when `render.mode: teletext`.
+- **`ascii`** block required when `render.mode: ascii`.
+- Spatial **`objects`** require integer `x, y, w, h, layer`.
+- **`place_ref`** format should match PlaceRef grammar when present.
+
+---
+
+# 16. Minimal canonical example
 
 ```yaml
-task:
-  status: enum
-  priority: enum
-  due: timestamp
-```
-
-Status:
-
-```text
-todo
-active
-blocked
-done
-archived
-```
-
----
-
-# 16. Validation Rules
-
-- id must be unique
-- grid must be defined for spatial views
-- tiles must not exceed bounds
-- layers must be ordered
-- view must match render mode
-
----
-
-# 17. Minimal Example
-
-```md
----
+schemaVersion: "usxd/0.1"
 id: dashboard_main
-format: usxd
-version: 3
-view: tile
-layer: 1
+type: surface
+title: Main
+kind: panel
+mode: canonical
+render:
+  mode: teletext
 grid:
-  cols: 16
-  rows: 24
----
-
-# Dashboard
+  cols: 80
+  rows: 30
+  tile_px: { w: 16, h: 24 }
+teletext:
+  cell_width: 16
+  cell_height: 24
+  mosaic: { cols: 2, rows: 3, style: acorn }
+  fallback: [ascii-block, shades, ascii]
 ```
 
 ---
 
-**End of USXD Schema**
-
+**End of USXD Schema (confirmed)**

@@ -1,5 +1,35 @@
 # TELETEXT Engine — uDOS v3
 
+**Confirmed:** 2026-04-09 · **Index:** [DISPLAY_STACK.md](DISPLAY_STACK.md) · **Canon:** [GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md)
+
+---
+
+# 0. Scale Clarification (Critical)
+
+Teletext operates in the **character-cell (raster) domain**.
+
+It must not be confused with:
+
+- Spatial Grid (tiles/maps layout)
+- ASCII layouts (freeform text drawing)
+
+Definitions:
+
+CELL
+  = 16 px × 24 px
+  = raster unit
+  = contains 2 × 3 mosaic blocks
+
+CHARACTER GRID
+  = array of cells (e.g. 40×25, 80×30, 120×40)
+  = defines surface dimensions in characters
+
+Rules:
+
+- **16×24** refers ONLY to **cell pixel size** (raster).
+- **Character grid** size is **variable** per surface; **uDOS v3 canonical** interchange default is **80×30** (see [GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md)).
+- Teletext UI is built from **mosaic** cells, not ASCII boxes.
+
 ---
 
 # 1. Overview
@@ -99,27 +129,45 @@ Meaning:
 
 ---
 
-# 6. Surface Grid vs Character Grid
+# 6. Character Grid Model
 
-There are two different grids in uDOS teletext rendering:
+Teletext renders onto a **character grid** composed of fixed-size cells.
 
-## 6.1 Surface Grid
+## 6.1 Grid Size
 
-The uDOS spatial surface may still use higher-level layout regions.
+Grid dimensions are **surface-defined**. Implementations may use 40×25, 120×40, etc.
 
-## 6.2 Character Grid
+**uDOS v3 canonical (interchange, tests, exports):**
 
-Inside a teletext surface, content is rendered as a matrix of 16×24 pixel cells.
+```text
+80 × 30   # primary
+40 × 15   # mini (half-scale)
+```
 
-Example:
+Other sizes remain valid for **adaptive** or legacy targets.
+
+## 6.2 Cell Mapping
+
+Each grid position corresponds to one teletext cell:
+
+```text
+Grid[x,y] → Cell(16×24 px)
+```
+
+## 6.3 Rendering Stack
 
 ```text
 Surface
- └── Character Grid
-      ├── cell 1 = 16×24 px
-      ├── cell 2 = 16×24 px
-      └── each cell = 2×3 mosaic blocks
+ └── Character Grid (e.g. 80×30)
+      └── Cells (16×24 px each)
+           └── Mosaic blocks (2×3)
 ```
+
+Rules:
+
+- grid size must be explicitly defined by the renderer
+- no implicit 16×24 grid assumptions
+- all rendering snaps to cell boundaries
 
 ---
 
@@ -239,14 +287,25 @@ Panels are built from:
 
 ## 9.3 Buttons
 
-Buttons should be defined as block regions rather than ASCII brackets where possible.
+Buttons must be constructed using mosaic-backed regions, not ASCII brackets.
 
-Conceptual example:
+Conceptual structure:
+
+- background = filled mosaic cells
+- label = text glyphs over cells
+
+Example (conceptual, not ASCII borders):
 
 ```text
-[OK]  = mosaic-backed label region
-[NEXT] = mosaic-backed label region
++++ ++++
++++ OK ++
++++ ++++
 ```
+
+Rules:
+
+- avoid [ ] or { } ASCII constructs
+- use block fills to define interaction areas
 
 ---
 
@@ -254,21 +313,23 @@ Conceptual example:
 
 Newsroom and signage layouts should use strong filled mosaic bands.
 
-Example conceptual layout:
+Example conceptual layout (mosaic bands):
 
 ```text
-++++ ++++ ++++ ++++
-++++ ++++ ++++ ++++
-.... .... .... ....
++++ ++++ ++++ ++++
++++ ++++ ++++ ++++
 
 HEADLINE REGION
 
-++++ ++++ ++++ ++++
-++++ ++++ ++++ ++++
-.... .... .... ....
++++ ++++ ++++ ++++
++++ ++++ ++++ ++++
+
+DATA BAND
+
++++ ++++ ++++ ++++
 ```
 
-This creates a teletext-native banded display rather than an ASCII box layout.
+This represents banded mosaic regions, not ASCII box layouts.
 
 ---
 

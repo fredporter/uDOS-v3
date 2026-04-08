@@ -1,18 +1,67 @@
-# uDOS v3 — Style Guide (Core)
+# uDOS v3 — Style Guide (Corrected)
+
+**Confirmed:** 2026-04-09 · **Index:** [DISPLAY_STACK.md](DISPLAY_STACK.md) · **Canon:** [GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md)
+
+---
+
+# 0. Core Scale Model (Critical)
+
+uDOS separates **three distinct layers of scale**:
+
+```text
+CELL (raster)
+  = 16 px × 24 px
+  = contains 2 × 3 mosaic blocks (teletext)
+
+GRID (character grid)
+  = variable size (e.g. 40×25, 80×30, 120×40)
+  = measured in cells (columns × rows)
+
+SPATIAL GRID (layout)
+  = abstract layout system (tiles, maps)
+  = NOT tied to pixel size
+```
+
+Rules:
+
+- 16×24 refers ONLY to cell pixel size
+- grids are NOT fixed to 16×24
+- spatial layout ≠ character grid ≠ raster cells
+
+
+Canonical distinction:
+
+ASCII
+  = symbolic layout (characters as symbols)
+
+TELETEXT
+  = raster layout (characters as pixel blocks)
 
 ---
 
 # 1. Philosophy
-
-uDOS v3 is a spatial, markdown-native operating system layer.
-
-Principles:
 
 - Everything is a file
 - Everything is spatial
 - Everything is composable
 - Everything is time-aware
 - Everything is renderable (text → grid → UI)
+
+---
+
+# 1.1 Naming Conventions
+
+IDs:
+  snake_case
+
+Types:
+  lowercase enums
+
+Maps:
+  earth, space, system, abstract
+
+Files:
+  kebab-case.md
 
 ---
 
@@ -36,12 +85,6 @@ Text Secondary #9AA6B2
 Text Muted     #6B7280
 ```
 
-Rules:
-
-- Dark-first UI
-- High contrast for teletext + ASCII
-- Semantic colour mapping required
-
 ---
 
 # 3. Typography
@@ -57,31 +100,38 @@ Mono 13px
 Rules:
 
 - Markdown = source of truth
-- Monospace required for structured surfaces
+- Monospace required for ASCII + teletext
 
 ---
 
-# 4. Grid System (16×24)
+# 4. Grid Concepts
 
-Base coordinate system:
+## 4.1 Character Grid
 
-```
-Cols: 16
-Rows: 24
-```
-
-Coordinates:
-
-```
-x: 0–15
-y: 0–23
+```text
+Example: 80 × 30
+= 80 columns × 30 rows
+= each cell = 16×24 px
 ```
 
-Tile model:
+## 4.2 Spatial Grid
 
+Used for layout, tiles, and maps.
+
+- variable size
+- unit = logical tile
+- not pixel-bound
+
+## 4.3 Surface size examples
+
+**Canonical (uDOS v3 interchange):**
+
+```text
+80 × 30 cells × 16×24 px → 1280 × 720 px
+40 × 15 cells (mini)     → 640 × 360 px
 ```
-{x, y, w, h, layer}
-```
+
+**Other** character grids (40×25, 120×40, …) are valid for **adaptive** or legacy surfaces; they are not the default canon.
 
 ---
 
@@ -89,9 +139,7 @@ Tile model:
 
 ## Definition
 
-USXD is the universal surface format for uDOS.
-
-## Base Example
+USXD defines surfaces independent of render scale.
 
 ```yaml
 ---
@@ -100,12 +148,6 @@ format: usxd
 version: 3
 view: tile
 layer: 1
-map_id: main
-grid:
-  cols: 16
-  rows: 24
-render:
-  mode: grid
 ---
 ```
 
@@ -120,77 +162,97 @@ render:
 - table
 - slide
 - story
+- task
+
+## Canonical Linking
+
+```text
+udos://vault/binder/file#block
+[[file]]
+[[file#block]]
+```
 
 ---
 
 # 6. ASCII System
 
-Rules:
-
-- Monospace only
-- Fixed width
-- Alignment required
+ASCII = logical text layout on a grid
 
 Example:
 
 ```ascii
 +----------------+
-| uDOS STATUS    |
+| STATUS         |
 +----------------+
 | Tasks: 14      |
-| Feed:  Live    |
 +----------------+
-```
-
-Primitives:
-
-```
-Box     +----+
-Line    ----
-Node    [ID]
-Arrow   --->
-Check   [ ] [x]
 ```
 
 ---
 
-# 7. Teletext System
+# 7. Teletext System (Correct Model)
 
-Characteristics:
-
-- Fixed grid
-- Block graphics
-- High contrast
-
-Six-stack layout (16×24):
+## 7.1 Cell
 
 ```text
-+----------------+
-| HEADER         |
-+----------------+
-| NAV            |
-+----------------+
-| MAIN           |
-+----------------+
-| DATA           |
-+----------------+
-| STATUS         |
-+----------------+
-| FOOTER         |
-+----------------+
+16 px × 24 px
 ```
 
-Newsroom example:
+## 7.2 Mosaic
 
 ```text
-############################
-# uDOS NEWSROOM           #
-############################
-# TASKS: 014 OPEN         #
-# FEED:  LIVE             #
-############################
-# NEXT: DEPLOY            #
-############################
+2 columns × 3 rows
+
+++
+++
+++
+```
+
+## 7.3 Grid
+
+Teletext renders on a **character grid**:
+
+```text
+Example: 80 × 30 cells
+```
+
+## 7.4 Composition
+
+- UI built from repeated mosaic cells
+- signage uses horizontal banding
+- not ASCII box drawing
+
+## 7.5 Mosaic Examples
+
+Single cell (full):
+
+```text
++
++
++
+```
+
+Left column:
+
+```text
+..
+..
+..
+```
+
+Top band:
+
+```text
++
+..
+..
+```
+
+Composite band (signage):
+
+```text
++++ ++++ ++++
++++ ++++ ++++
 ```
 
 ---
@@ -211,12 +273,15 @@ Grid:
 +------+------+
 ```
 
-Columns:
+---
+
+# 8.1 Layer Model
 
 ```text
-+----------+----------+
-| Notes    | Tasks    |
-+----------+----------+
+Layer 0 → Base
+Layer 1 → Content
+Layer 2 → Overlay
+Layer 3 → UI
 ```
 
 ---
@@ -255,7 +320,38 @@ Task:
 
 ---
 
-# 10. OK Assist
+# 9.1 Interaction Model
+
+Core actions:
+
+- drag → move
+- snap → align to grid
+- zoom → scale map/surface
+- select → focus entity
+
+---
+
+# 10. Spatial Layout
+
+Spatial systems operate independently of character grids.
+
+```text
+Map / Tiles / Layers
+```
+
+Example:
+
+```yaml
+location:
+  map: earth
+  x: 8
+  y: 4
+  layer: 2
+```
+
+---
+
+# 11. OK Assist
 
 Use ONLY:
 
@@ -265,20 +361,30 @@ Never use:
 
 - AI Assist
 
-Definition:
+Command format:
 
-OK Assist is the system interaction and command layer.
+```text
+> OK ASSIST: VERB TARGET PARAMS
+```
+
+Example:
+
+```text
+> OK ASSIST: CREATE TASK
+> OK ASSIST: MOVE TILE 2,3 → 4,5
+```
 
 ---
 
-# 11. Summary
+# 12. System Summary
 
-- Markdown = truth
-- Grid = spatial system
-- Time = behavioural layer
-- Layers = composition
+```text
+Cell   = 16×24 px
+Grid   = variable (e.g. 80×30)
+Layout = spatial (tiles/maps)
+```
 
 ---
 
-**End of Core Style Guide**
+**End of Corrected Style Guide**
 
