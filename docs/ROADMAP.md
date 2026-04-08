@@ -5,6 +5,8 @@
 ## Immediate post-demo (v3.0.2 candidates)
 
 - **Done (P0):** Job runner timeouts + vault write size cap + structured `tool.failed` / task `errorCode`; ThinUI SSE reconnect with backoff + status line; persistence decision (JSON for now) in [DATA-MODEL.md](DATA-MODEL.md).
+- **Done (P1):** Second demo scenario (inbox / email-thread intake) + [DEMO.md](DEMO.md) + `demo:seed:inbox`.
+- **Done (P2 prep):** [REPO-SPLIT-PREP.md](REPO-SPLIT-PREP.md) (checklist only; no repo split in-tree).
 - ThinUI live updates: optional SSE filtering or WebSocket if a hard blocker appears.
 - SQLite (or single-DB) consolidation for tasks + events if file sprawl hurts (deferred past v3.0.2 P0).
 - Second demo scenario (import inbox, PDF note, email thread) reusing same schemas.

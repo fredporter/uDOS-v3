@@ -36,6 +36,7 @@ Not the whole uDOS family. Not the full product vision. **One clean loop.**
 | [docs/MILESTONES.md](docs/MILESTONES.md) | Build order + checklist |
 | [docs/BACKLOG.md](docs/BACKLOG.md) | v3.0.1 closure + deferred work |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | After v3.0.1 (split repos, depth) |
+| [docs/REPO-SPLIT-PREP.md](docs/REPO-SPLIT-PREP.md) | Checklist for extracting Host / ThinUI / hivemind repos |
 | [docs/FILE-TREE.md](docs/FILE-TREE.md) | Exact monorepo tree + scaffold notes |
 
 ## Schemas (first draft)
@@ -89,6 +90,7 @@ npm run host:dev       # Host only (tsx watch)
 npm run thinui:dev     # ThinUI only
 npm run host:start     # Host only (run `npm run build` first)
 npm run demo:seed      # POST gold-path input to Host (needs Host running); --dry-run supported
+npm run demo:seed:inbox   # POST inbox-thread sample → `thread-{id}.md` vault stem
 npm run build          # sdk + hivemind + host + thinui
 ```
 

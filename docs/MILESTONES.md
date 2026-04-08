@@ -6,6 +6,8 @@
 
 **v3.0.2 — P0 reliability (M5) — complete (2026-04-09).** See [M5 checklist](#m5--v302-reliability-p0) and [BACKLOG.md](BACKLOG.md).
 
+**v3.0.2 — P1 demo uplift + P2 split prep (M6) — complete (2026-04-09).** Second intake scenario + [REPO-SPLIT-PREP.md](REPO-SPLIT-PREP.md).
+
 ---
 
 ## Overview
@@ -17,6 +19,7 @@
 | M3 | WP bridge | Login, restricted page, contact↔user link, privacy hooks | Done |
 | M4 | Demo polish | Seed data, docs, screenshot/video-ready state | Done |
 | M5 | v3.0.2 P0 | Job runner limits + structured failures; SSE resilience; persistence decision | Done |
+| M6 | v3.0.2 P1–P2 | Second demo scenario (inbox thread); DEMO + seed scripts; repo split prep doc | Done |
 
 ---
 
@@ -104,3 +107,15 @@ All nine **checked** → **v3.0.1 complete**.
 - [x] Persistence: document JSON-first decision; defer SQLite until a later tranche.
 
 **Exit:** Gold path still runs; failures are classifiable; ThinUI recovers from dropped SSE without requiring a full page reload.
+
+---
+
+## M6 — v3.0.2 demo uplift + split prep
+
+- [x] Hivemind: `email_thread_intake` when raw looks like an email thread; persist `classification.vaultStem` (`gold` | `thread`); task titles differ; same four Host tools.
+- [x] Host: `vaultRelPathForFeed` reads `vaultStem` for vault path and rerun consistency.
+- [x] Sample input `demo/sample-inputs/inbox-thread.txt`; `npm run demo:seed:inbox` (+ dry-run); `demo/scripts/seed.mjs --input …`.
+- [x] [DEMO.md](DEMO.md) operator notes for scenario A vs B.
+- [x] [REPO-SPLIT-PREP.md](REPO-SPLIT-PREP.md) for future `uDOS-host` / `uDOS-thinui` / hivemind extraction.
+
+**Exit:** Operator can run either scenario from ThinUI or CLI seed; vault files are distinguishable (`gold-*` vs `thread-*`); split checklist exists for post-acceptance work.

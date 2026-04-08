@@ -67,6 +67,7 @@ Legacy filename: [u_dos_v_3_style_guide.md](u_dos_v_3_style_guide.md) redirects 
 | [MILESTONES.md](MILESTONES.md) | Build-order checklists |
 | [BACKLOG.md](BACKLOG.md) | v3.0.1 closure + active backlog |
 | [ROADMAP.md](ROADMAP.md) | Post-demo themes (reliability, display stack, split repos) |
+| [REPO-SPLIT-PREP.md](REPO-SPLIT-PREP.md) | Future extraction checklist (`uDOS-host`, ThinUI, hivemind) |
 
 ---
 

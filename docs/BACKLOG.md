@@ -35,12 +35,12 @@ Priority order follows [ROADMAP.md](ROADMAP.md) and keeps scope limited to harde
 
 ### P1 — demo quality uplift
 
-- [ ] Add a second demo scenario (for example: inbox import, PDF note, or email-thread intake) using current schemas and runtime flow.
-- [ ] Expand operator run notes for the second scenario in [DEMO.md](DEMO.md).
+- [x] Second demo scenario: **email-thread / inbox intake** — Scout detects `From:`+`Subject:`, reply headers, or quoted lines; `vaultStem` `thread`, tasks + tools unchanged; sample `demo/sample-inputs/inbox-thread.txt`; `npm run demo:seed:inbox`.
+- [x] Operator notes for scenario B in [DEMO.md](DEMO.md).
 
 ### P2 — deferred until acceptance gates
 
-- [ ] Repo split prep (`apps/host`, `packages/hivemind`, `apps/thinui`) only after v3.0.2 acceptance.
+- [x] Repo split prep: checklist and boundaries in [REPO-SPLIT-PREP.md](REPO-SPLIT-PREP.md) (extract when you accept the tranche; no structural split in-repo).
 - [ ] Depth features remain deferred (sync engine, beacon networking, registry/marketplace, mobile, full module parity).
 
 ## Tracking rule

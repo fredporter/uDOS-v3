@@ -1,0 +1,17 @@
+From: Alex Rivera <alex@example.com>
+To: team@example.com
+Subject: Re: Q2 doc review — action items
+
+On Mon, Apr 7, 2026 at 9:12 AM, Jordan Lee wrote:
+> Can we lock the outline by Wednesday?
+> I will attach the PDF draft to the shared folder.
+
+Thanks — outline is almost there. Two follow-ups:
+
+1. Add a short "Risks" section before the appendix.
+2. Schedule 30m with design for the diagram swap.
+
+Ping me if anything blocks the Wednesday cut.
+
+Best,
+Alex

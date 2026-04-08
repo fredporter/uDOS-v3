@@ -30,7 +30,8 @@ Canonical on-disk layout (configurable root; default name illustrative):
 | `spool/feed-items.json` | Array of feed items |
 | `spool/tasks.json` | Array of tasks |
 | `events/log.json` | Array of events (ThinUI shows a tail via Host API) |
-| `vault/gold-{feed-uuid}.md` | Gold-path markdown output from stub tools |
+| `vault/gold-{feed-uuid}.md` | Default gold-path markdown from stub tools |
+| `vault/thread-{feed-uuid}.md` | Inbox / email-thread scenario (`classification.vaultStem` = `thread`) |
 
 HTTP entry points for these are listed in [ARCHITECTURE.md](ARCHITECTURE.md) (Host HTTP API).
 

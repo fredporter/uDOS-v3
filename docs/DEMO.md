@@ -1,4 +1,4 @@
-# Demo — uDOS v3.0.1 (gold path)
+# Demo — uDOS v3 (gold path + inbox thread)
 
 ## Purpose
 
@@ -31,6 +31,38 @@ Paste any of:
 
 ---
 
+## Scenario B — inbox / email-thread intake (v3.0.2)
+
+**Purpose:** Same Host tool chain and schemas as the gold path; Scout picks a different **intent**, **labels**, **task titles**, and **vault file stem** when the raw text looks like an email thread.
+
+**Detection (deterministic stub):** Hivemind classifies as `email_thread_intake` when any of:
+
+- Lines look like **`From:`** and **`Subject:`** headers, or
+- A line matches **`On … wrote:`** (common reply wrapper), or
+- There are **three or more** lines starting with **`>`** (quoted content).
+
+**Outputs:**
+
+| Output | Expected |
+|--------|----------|
+| Classification | `intent: email_thread_intake`, label `scenario:inbox-thread`, `classification.vaultStem: thread` |
+| Vault file | `.udos-data/vault/thread-{feed-uuid}.md` (not `gold-*`) |
+| Tasks | Four steps with inbox-oriented titles; same `toolId`s as scenario A |
+
+**CLI (Host running):**
+
+```bash
+npm run demo:seed:inbox
+# or
+node demo/scripts/seed.mjs --input sample-inputs/inbox-thread.txt
+```
+
+Use `npm run demo:seed:inbox:dry` or `--dry-run` to verify paths only.
+
+**ThinUI:** Paste the contents of `demo/sample-inputs/inbox-thread.txt` into the Feed panel. Confirm **Feed** shows `email_thread_intake` (in classification / intent where surfaced) and the **vault** list includes a `thread-*.md` file.
+
+---
+
 ## Expected visible outputs (minimum)
 
 | Output | Where / how |
@@ -56,7 +88,8 @@ Use this as the script for video and QA.
 3. **Gold path via CLI:** with Host running, `npm run demo:seed` (or `node demo/scripts/seed.mjs --dry-run` to verify paths only). Env `UDOS_HOST_URL` overrides the Host base URL. Alternatively paste text from `demo/sample-inputs/gold-path-note.txt` into the Feed panel.
 4. Observe **Feed** (classification intent), **Task graph** (four tasks → `done`), and **Output** (`feed.*`, `provider.*`, `tool.*`, `review.pass`).
 5. Confirm vault file on disk: `.udos-data/vault/gold-<feed-uuid>.md` under the Host data root (see `GET /api/v1/health` → `dataRoot`).
-6. **WordPress (optional):** activate **uDOS Empire Local**, create/log in as a **subscriber**, open `/empire-local-restricted/`. Link user to `demo-contact-001` via `POST /wp-json/udos-empire/v1/me/link` (authenticated), then `PATCH` contact consent as needed (see plugin README).
+6. **Scenario B (optional):** run `npm run demo:seed:inbox` or paste `demo/sample-inputs/inbox-thread.txt` in ThinUI. Confirm **`thread-<feed-uuid>.md`** under `vault/` and task titles that mention the thread / inbox (still four tools, all `done`).
+7. **WordPress (optional):** activate **uDOS Empire Local**, create/log in as a **subscriber**, open `/empire-local-restricted/`. Link user to `demo-contact-001` via `POST /wp-json/udos-empire/v1/me/link` (authenticated), then `PATCH` contact consent as needed (see plugin README).
 
 ### Steps 8–9 (automated prep)
 
@@ -96,4 +129,4 @@ Use for README, social, or a short launch video. Storing files in the repo is op
 2. **ThinUI — Tasks:** graph/queue with states (e.g. `done`) and optional **Rerun** control.
 3. **ThinUI — Output:** event log, provider/budget strip, vault files list.
 4. **WordPress — Restricted page:** logged-out (no access) vs logged-in Subscriber with content.
-5. **Vault on disk:** Finder or terminal listing of `.udos-data/vault/gold-*.md` (path from Host `GET /health` → `dataRoot`).
+5. **Vault on disk:** Finder or terminal listing of `.udos-data/vault/gold-*.md` and, after scenario B, `thread-*.md` (path from Host `GET /health` → `dataRoot`).

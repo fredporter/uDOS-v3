@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * Seeds the gold-path scenario by POSTing `demo/sample-inputs/gold-path-note.txt` to the Host.
+ * Seeds a demo scenario by POSTing a sample file to the Host.
  *
  * Env:
  *   UDOS_HOST_URL — Host base URL (default http://127.0.0.1:8787)
  *
  * Flags:
  *   --dry-run — print paths and payload preview only; no HTTP
+ *   --input <path> — sample file (absolute, cwd-relative, or under demo/ if relative)
  */
 
 import fs from "node:fs";
@@ -16,10 +17,27 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const demoRoot = path.join(__dirname, "..");
 const sampleWorkspace = path.join(demoRoot, "sample-workspace");
-const inputFile = path.join(demoRoot, "sample-inputs", "gold-path-note.txt");
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
+
+let inputRel = path.join("sample-inputs", "gold-path-note.txt");
+const inputIdx = args.indexOf("--input");
+if (inputIdx !== -1 && args[inputIdx + 1]) {
+  inputRel = args[inputIdx + 1];
+}
+
+function resolveInputFile(rel) {
+  if (path.isAbsolute(rel)) return rel;
+  const fromDemo = path.join(demoRoot, rel);
+  if (fs.existsSync(fromDemo)) return fromDemo;
+  const fromCwd = path.join(process.cwd(), rel);
+  if (fs.existsSync(fromCwd)) return fromCwd;
+  return fromDemo;
+}
+
+const inputFile = resolveInputFile(inputRel);
+
 const base = (process.env.UDOS_HOST_URL ?? "http://127.0.0.1:8787").replace(
   /\/$/,
   ""
@@ -43,6 +61,7 @@ if (!raw) {
 if (dryRun) {
   console.log("[demo:seed] dry-run — no request sent");
   console.log("[demo:seed] UDOS_HOST_URL →", base);
+  console.log("[demo:seed] input file:", inputFile);
   console.log("[demo:seed] POST →", `${base}/api/v1/feed/items`);
   console.log("[demo:seed] sample workspace:", sampleWorkspace);
   console.log(
@@ -91,10 +110,19 @@ try {
 }
 
 const id = body && typeof body.id === "string" ? body.id : "?";
-const vaultRel = `vault/gold-${id}.md`;
+const classification =
+  body && typeof body === "object" && body.classification && typeof body.classification === "object"
+    ? body.classification
+    : {};
+const stem =
+  typeof classification.vaultStem === "string"
+    ? classification.vaultStem
+    : "gold";
+const vaultRel = `vault/${stem}-${id}.md`;
 
 console.log("[demo:seed] ok");
 console.log("[demo:seed] Host data root:", dataRoot);
 console.log("[demo:seed] feed id:", id);
+console.log("[demo:seed] classification intent:", classification.intent ?? "(none)");
 console.log("[demo:seed] vault file:", path.join(dataRoot, vaultRel));
 console.log("[demo:seed] sample workspace:", sampleWorkspace);

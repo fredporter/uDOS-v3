@@ -25,6 +25,8 @@
     "build": "npm run validate:usxd && npm run build -w @udos/shared && npm run build -w @udos/sdk && npm run build -w @udos/hivemind && npm run build -w @udos/host && npm run build -w @udos/thinui",
     "demo:seed": "node demo/scripts/seed.mjs",
     "demo:seed:dry": "node demo/scripts/seed.mjs --dry-run",
+    "demo:seed:inbox": "node demo/scripts/seed.mjs --input sample-inputs/inbox-thread.txt",
+    "demo:seed:inbox:dry": "node demo/scripts/seed.mjs --dry-run --input sample-inputs/inbox-thread.txt",
     "demo:wp-bootstrap": "node demo/scripts/wp-bootstrap.mjs",
     "demo:wp-link": "node demo/scripts/wp-link-demo.mjs",
     "validate:usxd": "node scripts/validate-usxd-surface.mjs"

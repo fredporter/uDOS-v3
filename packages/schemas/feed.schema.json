@@ -19,7 +19,11 @@
       "properties": {
         "intent": { "type": "string" },
         "labels": { "type": "array", "items": { "type": "string" } },
-        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "vaultStem": {
+          "type": "string",
+          "description": "Host vault filename prefix: {vaultStem}-{feedId}.md (set by Scout/Planner)"
+        }
       },
       "additionalProperties": true
     },

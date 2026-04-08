@@ -46,6 +46,8 @@ In a second terminal:
 npm run demo:seed
 ```
 
+Optional second scenario (email-thread intake): `npm run demo:seed:inbox` → vault file `thread-<feed-id>.md` (see [DEMO.md](DEMO.md) scenario B).
+
 Expected:
 
 - Feed item appears in ThinUI

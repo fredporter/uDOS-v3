@@ -55,8 +55,16 @@ export async function runToolAsync(
 
     switch (task.toolId) {
       case "vault.write_note": {
+        const intent =
+          feed.classification && typeof feed.classification.intent === "string"
+            ? feed.classification.intent
+            : "";
+        const title =
+          intent === "email_thread_intake"
+            ? `# Inbox thread capture`
+            : `# Gold-path note`;
         const body = [
-          `# Gold-path note`,
+          title,
           ``,
           `**Feed:** ${feed.id}`,
           ``,
@@ -135,6 +143,20 @@ export async function runToolAsync(
   }
 }
 
-export function defaultVaultRelPath(feedId: string): string {
-  return `gold-${feedId}.md`;
+const VAULT_STEM_RE = /^[a-z][a-z0-9_-]{0,31}$/;
+
+/**
+ * Resolves `vault/{stem}-{feedId}.md` from persisted feed classification (`vaultStem`).
+ * Invalid or missing values fall back to `gold`.
+ */
+export function vaultRelPathForFeed(
+  feedId: string,
+  classification: Record<string, unknown> | undefined
+): string {
+  const raw =
+    classification && typeof classification.vaultStem === "string"
+      ? classification.vaultStem.trim().toLowerCase()
+      : "gold";
+  const stem = VAULT_STEM_RE.test(raw) ? raw : "gold";
+  return `${stem}-${feedId}.md`;
 }

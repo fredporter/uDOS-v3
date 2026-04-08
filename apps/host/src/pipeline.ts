@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { scoutAndPlan } from "@udos/hivemind";
 import type { FeedItem, Stores, Task, TaskState } from "./storage.js";
-import { defaultVaultRelPath } from "./tools.js";
+import { vaultRelPathForFeed } from "./tools.js";
 import { runToolWithTimeout } from "./tool-runner.js";
 import { normalizeToolFailure } from "./tool-errors.js";
 
@@ -169,7 +169,7 @@ export async function processFeedPipeline(
   }
   stores.writeTasks(allTasks);
 
-  const vaultRel = defaultVaultRelPath(feed.id);
+  const vaultRel = vaultRelPathForFeed(feed.id, feedRow.classification);
   const ordered = createdIds
     .map((id) => stores.readTasks().find((t) => t.id === id))
     .filter((t): t is Task => t !== undefined);
@@ -261,7 +261,7 @@ export async function rerunTask(
   const feed = stores.readFeedItems().find((f) => f.id === task.feedId);
   if (!feed) return { ok: false, code: "not_found", message: "feed_not_found" };
 
-  const vaultRel = defaultVaultRelPath(feed.id);
+  const vaultRel = vaultRelPathForFeed(feed.id, feed.classification);
 
   setTaskState(stores, task.id, "running", feed.id);
 
