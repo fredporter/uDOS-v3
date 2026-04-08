@@ -1,9 +1,11 @@
 import { randomUUID } from "node:crypto";
 import { scoutAndPlan } from "@udos/hivemind";
 import type { FeedItem, Stores, Task, TaskState } from "./storage.js";
-import { defaultVaultRelPath, runTool } from "./tools.js";
+import { defaultVaultRelPath } from "./tools.js";
+import { runToolWithTimeout } from "./tool-runner.js";
+import { normalizeToolFailure } from "./tool-errors.js";
 
-const VERSION_TAG = "udos-host-pipeline/0.5.0";
+const VERSION_TAG = "udos-host-pipeline/0.6.0";
 
 function nowIso(): string {
   return new Date().toISOString();
@@ -26,6 +28,39 @@ function push(
     actor: partial.actor,
     payload: { ...partial.payload, pipeline: VERSION_TAG },
     severity: partial.severity ?? "info",
+  });
+}
+
+function recordToolFailure(
+  stores: Stores,
+  feedId: string,
+  taskId: string,
+  toolId: string,
+  failure: { code: string; message: string; retryable: boolean },
+  extraPayload?: Record<string, unknown>
+): void {
+  const fresh = stores.readTasks();
+  const tr = fresh.find((x) => x.id === taskId);
+  if (tr) {
+    tr.state = "failed";
+    tr.error = failure.message;
+    tr.errorCode = failure.code;
+    tr.updatedAt = nowIso();
+    stores.writeTasks(fresh);
+  }
+  push(stores, {
+    type: "tool.failed",
+    feedId,
+    taskId,
+    actor: "host",
+    payload: {
+      toolId,
+      error: failure.message,
+      code: failure.code,
+      retryable: failure.retryable,
+      ...extraPayload,
+    },
+    severity: "error",
   });
 }
 
@@ -55,11 +90,11 @@ function setTaskState(
  * After a feed item is persisted, run Scout → Planner → Maker → Reviewer (stub).
  * Mutates stores; returns the updated feed item.
  */
-export function processFeedPipeline(
+export async function processFeedPipeline(
   stores: Stores,
   dataRoot: string,
   feed: FeedItem
-): FeedItem {
+): Promise<FeedItem> {
   const plan = scoutAndPlan({ id: feed.id, raw: feed.raw });
 
   push(stores, {
@@ -155,7 +190,7 @@ export function processFeedPipeline(
     });
 
     try {
-      const { outputRefs } = runTool({
+      const { outputRefs } = await runToolWithTimeout({
         dataRoot,
         feed: feedRow,
         task,
@@ -195,23 +230,8 @@ export function processFeedPipeline(
         });
       }
     } catch (e) {
-      const msg = e instanceof Error ? e.message : String(e);
-      const fresh = stores.readTasks();
-      const tr = fresh.find((x) => x.id === task.id);
-      if (tr) {
-        tr.state = "failed";
-        tr.error = msg;
-        tr.updatedAt = nowIso();
-        stores.writeTasks(fresh);
-      }
-      push(stores, {
-        type: "tool.failed",
-        feedId: feed.id,
-        taskId: task.id,
-        actor: "host",
-        payload: { toolId: task.toolId, error: msg },
-        severity: "error",
-      });
+      const failure = normalizeToolFailure(e);
+      recordToolFailure(stores, feed.id, task.id, task.toolId, failure);
       break;
     }
   }
@@ -222,13 +242,19 @@ export function processFeedPipeline(
 /**
  * Re-execute a single task’s tool (manual control / recovery). Does not rebuild the graph.
  */
-export function rerunTask(
+export async function rerunTask(
   stores: Stores,
   dataRoot: string,
   taskId: string
-):
+): Promise<
   | { ok: true; task: Task }
-  | { ok: false; code: "not_found" | "tool_failed" | "internal"; message: string } {
+  | {
+      ok: false;
+      code: "not_found" | "tool_failed" | "internal";
+      message: string;
+      toolErrorCode?: string;
+    }
+> {
   const tasks = stores.readTasks();
   const task = tasks.find((x) => x.id === taskId);
   if (!task) return { ok: false, code: "not_found", message: "task_not_found" };
@@ -248,7 +274,7 @@ export function rerunTask(
   });
 
   try {
-    const { outputRefs } = runTool({
+    const { outputRefs } = await runToolWithTimeout({
       dataRoot,
       feed,
       task,
@@ -260,6 +286,7 @@ export function rerunTask(
       tr.outputRefs = outputRefs;
       tr.updatedAt = nowIso();
       tr.error = undefined;
+      tr.errorCode = undefined;
       stores.writeTasks(fresh);
     }
     push(stores, {
@@ -295,23 +322,15 @@ export function rerunTask(
     }
     return { ok: true, task: final };
   } catch (e) {
-    const msg = e instanceof Error ? e.message : String(e);
-    const fresh = stores.readTasks();
-    const tr = fresh.find((x) => x.id === task.id);
-    if (tr) {
-      tr.state = "failed";
-      tr.error = msg;
-      tr.updatedAt = nowIso();
-      stores.writeTasks(fresh);
-    }
-    push(stores, {
-      type: "tool.failed",
-      feedId: feed.id,
-      taskId: task.id,
-      actor: "host",
-      payload: { toolId: task.toolId, error: msg, manualRerun: true },
-      severity: "error",
+    const failure = normalizeToolFailure(e);
+    recordToolFailure(stores, feed.id, task.id, task.toolId, failure, {
+      manualRerun: true,
     });
-    return { ok: false, code: "tool_failed", message: msg };
+    return {
+      ok: false,
+      code: "tool_failed",
+      message: failure.message,
+      toolErrorCode: failure.code,
+    };
   }
 }

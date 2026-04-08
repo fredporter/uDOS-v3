@@ -45,6 +45,7 @@ export type Task = {
   toolInput?: Record<string, unknown>;
   outputRefs?: string[];
   error?: string;
+  errorCode?: string;
   review?: {
     status: "pass" | "fail" | "needs_fix";
     notes?: string;

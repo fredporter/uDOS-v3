@@ -29,9 +29,9 @@ Priority order follows [ROADMAP.md](ROADMAP.md) and keeps scope limited to harde
 
 ### P0 — reliability hardening (current)
 
-- [ ] Job runner hardening: timeout policy, resource caps, structured failure codes.
-- [ ] ThinUI live-update resilience: reconnect UX and stream status; keep SSE as default unless hard blocker appears.
-- [ ] Task/event persistence review: decide if JSON files remain sufficient or consolidate into SQLite.
+- [x] Job runner hardening: timeout policy, resource caps, structured failure codes (`UDOS_TOOL_TIMEOUT_MS`, `UDOS_VAULT_NOTE_MAX_BYTES`; task `errorCode` + `tool.failed` payload).
+- [x] ThinUI live-update resilience: reconnect UX and stream status; keep SSE as default unless hard blocker appears.
+- [x] Task/event persistence review: JSON files retained for v3.0.2; SQLite deferred (recorded in [DATA-MODEL.md](DATA-MODEL.md)).
 
 ### P1 — demo quality uplift
 

@@ -34,6 +34,8 @@ export type Task = {
   toolInput?: Record<string, unknown>;
   outputRefs?: string[];
   error?: string;
+  /** Structured code when `state === "failed"` (e.g. `tool_timeout`, `unknown_tool`). */
+  errorCode?: string;
   review?: {
     status: "pass" | "fail" | "needs_fix";
     notes?: string;

@@ -295,7 +295,7 @@ async function handleFeedItems(
     items.push(item);
     stores.writeFeedItems(items);
 
-    const updated = processFeedPipeline(stores, DATA_ROOT, item);
+    const updated = await processFeedPipeline(stores, DATA_ROOT, item);
 
     sendJson(res, req, 201, updated);
     return true;
@@ -352,7 +352,7 @@ async function route(
       sendJson(res, req, 400, { error: "missing_task_id" });
       return;
     }
-    const result = rerunTask(stores, DATA_ROOT, taskId);
+    const result = await rerunTask(stores, DATA_ROOT, taskId);
     if (!result.ok) {
       const status =
         result.code === "not_found"
@@ -363,6 +363,9 @@ async function route(
       sendJson(res, req, status, {
         error: result.message,
         code: result.code,
+        ...(result.toolErrorCode
+          ? { toolErrorCode: result.toolErrorCode }
+          : {}),
       });
       return;
     }

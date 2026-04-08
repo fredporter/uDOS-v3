@@ -164,4 +164,13 @@ Base URL: `http://127.0.0.1:8787` (or `PORT` / `UDOS_DATA_ROOT` as configured). 
 | `GET` | `/api/v1/bridge/wordpress` | Host-side probe of `UDOS_WP_BASE_URL` → WP `udos-empire/v1/health` |
 | `POST` | `/api/v1/bridge/wp-event` | WordPress → Host (requires `UDOS_BRIDGE_SECRET` + header `X-Udos-Bridge-Token`); types `wp.contact_linked`, `wp.profile_updated` |
 
+### Host tool execution (v3.0.2)
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `UDOS_TOOL_TIMEOUT_MS` | `60000` | Per-tool wall-clock cap (capped at 600000). |
+| `UDOS_VAULT_NOTE_MAX_BYTES` | `524288` | Max UTF-8 size of assembled vault body per write (min 1024; capped at 50 MiB). |
+
+Failed tools emit `tool.failed` with `payload.code`, `payload.retryable`, and `payload.error`; tasks store `error` + `errorCode`. See [DATA-MODEL.md](DATA-MODEL.md).
+
 WordPress plugin REST is documented in [`apps/wordpress-plugin-empire-local/README.md`](../apps/wordpress-plugin-empire-local/README.md).

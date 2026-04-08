@@ -72,6 +72,22 @@ Transitions are owned by **Hivemind** logic but **persisted** by **Host**.
 
 ---
 
+## Tool failure codes (v3.0.2)
+
+When `tool.failed` fires, `payload` includes:
+
+| Field | Meaning |
+|-------|---------|
+| `code` | Stable classifier (mirrors task `errorCode` when the task fails). |
+| `error` | Human-readable message. |
+| `retryable` | Hint for operators/automation (not a guarantee). |
+
+Common `code` values: `tool_timeout`, `unknown_tool`, `io_error`, `resource_cap_exceeded`, `internal_error`.
+
+## Persistence choice (v3.0.2)
+
+**Decision:** Keep **JSON files** under `.udos-data` for feed, tasks, and events through v3.0.2. **SQLite** (or another single-DB consolidation) remains a later optimization if tail latency or file sprawl becomes painful; track in [BACKLOG.md](BACKLOG.md) if scope changes.
+
 ## Event types (suggested baseline)
 
 Non-exhaustive; extend via `event.schema.json` `type` enum as needed:

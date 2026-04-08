@@ -37,9 +37,10 @@ export function App() {
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
   const [rerunningId, setRerunningId] = useState<string | null>(null);
-  const [live, setLive] = useState<"connecting" | "live" | "down">(
-    "connecting"
-  );
+  const [live, setLive] = useState<
+    "connecting" | "live" | "reconnecting" | "down"
+  >("connecting");
+  const [sseAttempt, setSseAttempt] = useState(0);
 
   const refresh = useCallback(async () => {
     setError(null);
@@ -97,45 +98,82 @@ export function App() {
   useEffect(() => {
     const base = hostUrl.replace(/\/$/, "");
     const streamUrl = `${base}/api/v1/events/stream`;
-    const es = new EventSource(streamUrl);
+    let es: EventSource | null = null;
+    let reconnectTimer = 0;
+    let stopped = false;
+    const attemptRef = { n: 0 };
+    const minDelayMs = 1000;
+    const maxDelayMs = 30_000;
 
-    es.addEventListener("open", () => {
-      setLive("live");
-    });
+    const attachHandlers = (source: EventSource) => {
+      source.addEventListener("open", () => {
+        attemptRef.n = 0;
+        setSseAttempt(0);
+        setLive("live");
+      });
 
-    es.addEventListener("snapshot", (e) => {
-      const raw = (e as MessageEvent).data as string;
-      try {
-        const data = JSON.parse(raw) as { events: EventEntry[] };
-        setEvents(data.events);
-        scheduleSync();
-      } catch {
-        /* ignore */
-      }
-    });
+      source.addEventListener("snapshot", (e) => {
+        const raw = (e as MessageEvent).data as string;
+        try {
+          const data = JSON.parse(raw) as { events: EventEntry[] };
+          setEvents(data.events);
+          scheduleSync();
+        } catch {
+          /* ignore */
+        }
+      });
 
-    es.addEventListener("append", (e) => {
-      const raw = (e as MessageEvent).data as string;
-      try {
-        const ev = JSON.parse(raw) as EventEntry;
-        setEvents((prev) => {
-          const next = [...prev, ev];
-          return next.length > 250 ? next.slice(-250) : next;
-        });
-        scheduleSync();
-      } catch {
-        /* ignore */
-      }
-    });
+      source.addEventListener("append", (e) => {
+        const raw = (e as MessageEvent).data as string;
+        try {
+          const ev = JSON.parse(raw) as EventEntry;
+          setEvents((prev) => {
+            const next = [...prev, ev];
+            return next.length > 250 ? next.slice(-250) : next;
+          });
+          scheduleSync();
+        } catch {
+          /* ignore */
+        }
+      });
 
-    es.onerror = () => {
-      setLive("down");
+      source.onerror = () => {
+        source.close();
+        es = null;
+        if (stopped) return;
+        attemptRef.n += 1;
+        setSseAttempt(attemptRef.n);
+        setLive(attemptRef.n <= 1 ? "down" : "reconnecting");
+        const delay = Math.min(
+          maxDelayMs,
+          minDelayMs * 2 ** Math.max(0, attemptRef.n - 1)
+        );
+        reconnectTimer = window.setTimeout(connect, delay);
+      };
     };
+
+    const connect = () => {
+      if (stopped) return;
+      window.clearTimeout(reconnectTimer);
+      reconnectTimer = 0;
+      if (attemptRef.n === 0) {
+        setLive("connecting");
+      } else {
+        setLive("reconnecting");
+      }
+      const next = new EventSource(streamUrl);
+      es = next;
+      attachHandlers(next);
+    };
+
+    connect();
 
     const full = window.setInterval(() => void refresh(), 12000);
 
     return () => {
-      es.close();
+      stopped = true;
+      window.clearTimeout(reconnectTimer);
+      es?.close();
       window.clearInterval(full);
       window.clearTimeout(debounceRef.current);
     };
@@ -201,9 +239,11 @@ export function App() {
   const liveLabel =
     live === "live"
       ? "SSE event stream + periodic refresh"
-      : live === "down"
-        ? "SSE disconnected — full refresh every 12s"
-        : "connecting…";
+      : live === "reconnecting"
+        ? `SSE reconnecting (attempt ${sseAttempt}) — full refresh every 12s`
+        : live === "down"
+          ? "SSE disconnected — retrying with backoff + 12s refresh"
+          : "connecting…";
 
   const canvas = canonicalCanvasPx();
 

@@ -1,8 +1,10 @@
-# Milestones — uDOS v3.0.1
+# Milestones — uDOS v3
 
 ## Release status
 
-**v3.0.1 — complete (2026-04-08).** M1–M4 checklists below are satisfied; backlog summary: [BACKLOG.md](BACKLOG.md).
+**v3.0.1 — complete (2026-04-08).** M1–M4 checklists below are satisfied.
+
+**v3.0.2 — P0 reliability (M5) — complete (2026-04-09).** See [M5 checklist](#m5--v302-reliability-p0) and [BACKLOG.md](BACKLOG.md).
 
 ---
 
@@ -14,6 +16,7 @@
 | M2 | Local loop | Feed → tasks → execute → events → ThinUI visibility | Done |
 | M3 | WP bridge | Login, restricted page, contact↔user link, privacy hooks | Done |
 | M4 | Demo polish | Seed data, docs, screenshot/video-ready state | Done |
+| M5 | v3.0.2 P0 | Job runner limits + structured failures; SSE resilience; persistence decision | Done |
 
 ---
 
@@ -90,3 +93,14 @@ From [DEMO.md](DEMO.md):
 All nine **checked** → **v3.0.1 complete**.
 
 **As of 2026-04-08:** All nine steps are supported by the repo and docs; operator performs one-time WordPress install + user creation for steps 8–9.
+
+---
+
+## M5 — v3.0.2 reliability (P0)
+
+- [x] Host: per-tool timeout (`UDOS_TOOL_TIMEOUT_MS`) and vault body size cap (`UDOS_VAULT_NOTE_MAX_BYTES`).
+- [x] Host: `tool.failed` payload includes `code` + `retryable`; failed tasks persist `errorCode` (see [DATA-MODEL.md](DATA-MODEL.md)).
+- [x] ThinUI: SSE closes on error and reconnects with exponential backoff (max 30s); header shows connecting / live / reconnecting (attempt) / down.
+- [x] Persistence: document JSON-first decision; defer SQLite until a later tranche.
+
+**Exit:** Gold path still runs; failures are classifiable; ThinUI recovers from dropped SSE without requiring a full page reload.

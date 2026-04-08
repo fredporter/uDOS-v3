@@ -27,6 +27,10 @@
       "description": "Vault paths or artifact ids"
     },
     "error": { "type": "string" },
+    "errorCode": {
+      "type": "string",
+      "description": "Stable failure classifier when state is failed (e.g. tool_timeout, unknown_tool)"
+    },
     "review": {
       "type": "object",
       "properties": {
