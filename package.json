@@ -1,7 +1,8 @@
 {
   "name": "udos-v3",
+  "version": "4.0.0",
   "private": true,
-  "description": "uDOS v3.0.1 local-first demo monorepo",
+  "description": "uDOS v3.0.1 local-first demo monorepo (dev process standard v4 — see docs/dev-process-v4.md)",
   "workspaces": [
     "apps/*",
     "packages/*"

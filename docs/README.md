@@ -13,6 +13,9 @@ This folder is the **authoritative doc tree** for v3. **Naming:** prefer **`keba
 | --- | --- |
 | [QUICKSTART.md](QUICKSTART.md) | Install, launch scripts, first run |
 | [SCOPE-v3.0.1.md](SCOPE-v3.0.1.md) | What ships vs deferred (locked) |
+| [dev-process-v4.md](dev-process-v4.md) | Locked dev structure: `TASKS.md`, `.local/` / `.compost/`, checklist |
+| [workspace-and-family-repos-v4.md](workspace-and-family-repos-v4.md) | Workspace siblings, demo loop needs, split criteria |
+| [repo-identity-and-rename-v4.md](repo-identity-and-rename-v4.md) | What this monorepo is for; rename / branding options (v4) |
 | [../README.md](../README.md) | Repo overview + planning table |
 
 ---

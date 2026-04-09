@@ -1,5 +1,7 @@
 # uDOS v3.0.1 — Local-first demo (planning cut)
 
+**Repo meta / dev standard:** root `package.json` **version 4.x** tracks the **family dev process** (see [docs/dev-process-v4.md](docs/dev-process-v4.md)). **v3.0.1** below is the **planning / demo release** name for this integration monorepo — not the same axis as UniversalSurfaceXD or uDOS-dev versioning.
+
 **v3.0.1** is the first public-facing planning release for a **single, runnable local loop**: ThinUI submits and inspects work, Hivemind plans and routes it, Host executes and persists it, WordPress provides local identity, privacy, and restricted pages, and everything lands on a **mounted vault/workspace**.
 
 This repository is the **v3 monorepo target**. Implementation may start empty; the **planning pack** lives under [`docs/`](docs/) and [`packages/schemas/`](packages/schemas/).
