@@ -1,5 +1,7 @@
 # uDOS v3 — documentation
 
+**uDos** = **Universal Device Operating Surface**; **UDOs** = User Defined Objects when that plural is intended.
+
 **Monorepo:** local-first demo (Host, Hivemind, ThinUI, optional WordPress).  
 **Sibling design repo:** **[UniversalSurfaceXD](https://github.com/fredporter/UniversalSurfaceXD)** (interchange, browser-mockup, MIT) — pair it for portable surface JSON and Figma workflows. Optional clone: `../UniversalSurfaceXD` next to this repo’s parent folder (see [`uDOS-v3.code-workspace`](../../uDOS-v3.code-workspace)).
 

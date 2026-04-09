@@ -1,5 +1,7 @@
 # Agent notes (uDOS-v3)
 
+**uDos** = **Universal Device Operating Surface** (canonical expansion from v3+). **UDOs** = User Defined Objects when that noun is intended.
+
 ## Scope
 
 - **This repo** is the **runnable v3 monorepo** (Host, ThinUI, Hivemind, schemas, demo). Prefer **`main`**; short-lived branches only with a clear reason.

@@ -5,6 +5,12 @@
 
 ---
 
+## uDos — expansion (canonical)
+
+From v3 onward, the stylized name **uDos** expands to **Universal Device Operating Surface** (not “operating system”). **UDOs** (plural caps) is reserved in prose for **User Defined Objects** when that meaning is intended.
+
+---
+
 ## What is different about *this* repo (today: `uDOS-v3`)?
 
 | Repo | Role |
