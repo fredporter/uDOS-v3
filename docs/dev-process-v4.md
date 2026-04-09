@@ -8,6 +8,10 @@
 - **Repo meta version** `4.x` (see root `package.json` **version**) tracks the **dev process and tooling contract**, not a rename of the **v3.0.1 demo / planning** product line (see [SCOPE-v3.0.1.md](SCOPE-v3.0.1.md)).
 - **UniversalSurfaceXD v4** is the companion design/interchange lab: [github.com/fredporter/UniversalSurfaceXD](https://github.com/fredporter/UniversalSurfaceXD) — pair for surface JSON and Figma workflows.
 
+### Naming in prose (v4 onwards)
+
+Prefer **uDos** (see [repo-identity-and-rename-v4.md](repo-identity-and-rename-v4.md) § expansion) in **new and edited** copy. Older **uDOS** spellings in existing files are fine until that file is revised — **no** whole-repo grep/replace campaign.
+
 ## Locked layout
 
 | Zone | Role |
