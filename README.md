@@ -8,7 +8,7 @@
 
 This repository is the **v3 monorepo target**. Implementation may start empty; the **planning pack** lives under [`docs/`](docs/) and [`packages/schemas/`](packages/schemas/).
 
-**Family v4 — Cursor / VS Code:** open **[`uDosGo.code-workspace`](uDosGo.code-workspace)** (single multi-root workspace: this repo + Linkdown, Macdown, Chatdown, USXD, uDosConnect, Sonic, Ventoy under `~/Code/`).
+**Family v4 — Cursor / VS Code:** open **[`uDosGo.code-workspace`](uDosGo.code-workspace)** at the repo root (simple `../` paths to `~/Code/` siblings). **Focused lanes** (same repos, paths from `workspaces/`): [`workspaces/README.md`](workspaces/README.md) — `uDOS-v4.code-workspace`, `Linkdown-v4.code-workspace`, `Macdown-v4.code-workspace`.
 
 ## One sentence
 

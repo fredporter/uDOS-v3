@@ -15,7 +15,7 @@
 
 ## Pairing
 
-- **Multi-root workspace (v4):** one file — **[`uDosGo.code-workspace`](uDosGo.code-workspace)** at this repo root (opens `~/Code/` siblings: Linkdown, Syncdown-app, Chatdown, UniversalSurfaceXD, uDosConnect, SonicScrewdriver, Ventoy).
+- **Multi-root workspace (v4):** default **[`uDosGo.code-workspace`](uDosGo.code-workspace)** at repo root; **focused** variants in **[`workspaces/`](workspaces/README.md)** (`uDOS-v4`, Linkdown, Macdown — same sibling roots, paths relative to `workspaces/`).
 - **Design / surfaces:** [UniversalSurfaceXD](https://github.com/fredporter/UniversalSurfaceXD) (v4 lab) — grid/interchange alignment; **canon** text in [docs/GRID-GRAPHICS-CANON.md](docs/GRID-GRAPHICS-CANON.md).
 - **Family workflow:** [uDos-Dev](https://github.com/fredporter/uDos-Dev) (submodule under uDosConnect) — governance only. **v4 rounds index:** [`uDosConnect/uDosDev/docs/v4-dev-rounds.md`](../uDosConnect/uDosDev/docs/v4-dev-rounds.md).
 

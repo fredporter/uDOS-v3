@@ -20,4 +20,4 @@ Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uD
 
 ## Done
 
-- [x] [UDGO-WS] Single multi-root workspace: **`uDosGo.code-workspace`** only; removed `workspaces/*.code-workspace` and duplicate `~/Code/uDosGo.code-workspace` / `uDosFamily.code-workspace` #docs
+- [x] [UDGO-WS] Multi-root workspaces: repo-root **`uDosGo.code-workspace`** + **`workspaces/`** (`uDOS-v4`, Linkdown-v4, Macdown-v4); removed duplicate `~/Code/uDosGo.code-workspace` / `uDosFamily.code-workspace` #docs
