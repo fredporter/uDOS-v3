@@ -144,6 +144,6 @@ All nine **checked** → **v3.0.1 complete**.
 - [x] **SSE:** explicit decision to keep current SSE + reconnect (no WebSocket) unless a blocker is filed.
 - [x] **Persistence:** JSON through v3.0.3 reaffirmed in [DATA-MODEL.md](DATA-MODEL.md); SQLite remains post-scope.
 - [x] **Optional marketing:** [docs/media/README.md](media/README.md) for screenshot/video drops.
-- [x] **uDosDev roadmap feed:** `v3-feed.md` doc migration + `uDOS-docs` v2 layout entries marked **done** (sibling **uDos-Dev** / **uDosDev** governance tree).
+- [x] **uDosDev roadmap feed:** `v3-feed.md` doc migration + `uDOS-docs` v2 layout entries marked **done** (sibling **uDosDev** governance tree).
 
 **Exit:** [BACKLOG.md](BACKLOG.md) has no active tranche; new work starts a **v3.0.4+** or family plan entry.

@@ -16,11 +16,20 @@ From v3 onward, the stylized name **uDos** expands to **Universal Device Operati
 | Repo | Role |
 | --- | --- |
 | **This monorepo** | **Runnable integration:** Host + ThinUI + Hivemind + shared packages + schemas + demo scripts in **one** tree — the **local-first loop** you can `doctor` / `launch`. |
-| **uDosDev** ([`uDos-Dev`](https://github.com/fredporter/uDos-Dev) on GitHub, submodule under **uDosConnect**) | **Governance / workflow** only — no runtime. |
+| **uDosDev** ([`uDosDev`](https://github.com/fredporter/uDosDev) on GitHub, submodule under **uDosConnect**) | **Governance / workflow** only — no runtime. |
 | **UniversalSurfaceXD** | **Design + interchange + browser lab** — not the Host runtime. |
 | **uDOS-host / uDOS-thinui (v2 siblings)** | **Legacy / extraction references** — not the integration home for the v3-era demo (see [REPO-SPLIT-PREP.md](REPO-SPLIT-PREP.md)). |
 
 So the **main point of difference** is: **this is the *run* repo** — the place the stack actually ships together for the demo. Names like “v3” in the **repository title** now collide with **dev-standard v4** and **UniversalSurfaceXD v4** — hence a rename is reasonable.
+
+### Current GitHub slugs (2026-04)
+
+| Repo | Canonical slug | Notes |
+| --- | --- | --- |
+| **This monorepo** | [`fredporter/uDosGo`](https://github.com/fredporter/uDosGo) | `package.json` `repository` / `homepage` / `bugs` use this URL; clone path **`~/Code/uDosGo/`**. |
+| **uDosDev** | [`fredporter/uDosDev`](https://github.com/fredporter/uDosDev) | Not `uDos-Dev`; submodule under **uDosConnect**. |
+
+Branding sweep for **uDosGo** (workspace names, docs, npm metadata) is aligned to the table above. An optional **rename** of `uDosGo` to another stable name remains a future GitHub Settings change — use the checklist below when you execute it.
 
 ---
 

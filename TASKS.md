@@ -6,14 +6,11 @@ Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uD
 
 ## In Progress
 
-- [ ] [UDGO-T001] Execute GitHub branding sweep when schedule allows (rename follow-up) #infra
-  ↳ Scope: `docs/repo-identity-and-rename-v4.md`, workspace + cross-repo links
-  ↳ Outcome: clone URL and docs match chosen slug
-  ↳ Next: reconcile remaining `uDOS` / old slug mentions in touched docs after this push; open PR or direct push per solo policy
-
 ## Blocked
 
 ## Done
+
+- [x] [UDGO-T001] **GitHub branding sweep** — canonical **`fredporter/uDosGo`** documented in [`docs/repo-identity-and-rename-v4.md`](docs/repo-identity-and-rename-v4.md); **`uDosDev`** links use **`fredporter/uDosDev`** (not `uDos-Dev`); workspace + `package.json` already aligned; optional repo rename deferred per checklist in same doc #infra
 
 - [x] [UDGO-UDEV-ARCH] **uDosDev `@dev` archive** — progress + delta in [`docs/dev/udosdev-v4-upgrade-progress.md`](docs/dev/udosdev-v4-upgrade-progress.md), [`docs/dev/udosdev-v4-upgrade-delta.md`](docs/dev/udosdev-v4-upgrade-delta.md); uDosDev **`[UDEV-R02]`** (tracked tree → `docs/archive/pre-v4-atdev/`, root `@dev` symlink) #docs
 
