@@ -10,6 +10,8 @@ Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uD
 
 ## Done
 
+- [x] [UDGO-R07] **UCODE addendum 3 + v4.4–v4.8 rounds plan** — [`UCODE_v4_addendum-3-execution-runtime-sandboxing.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_addendum-3-execution-runtime-sandboxing.md); [`uDos-v4-rounds-consolidated-execution-plan.md`](../uDosConnect/uDosDev/docs/future/uDos-v4-rounds-consolidated-execution-plan.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`AGENTS.md`](AGENTS.md); [`uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md) §10 #docs #core
+
 - [x] [UDGO-R06] **UCODE v4 addendum in spec hub** — [`UCODE_v4_addendum-quotes-markup-symbols.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_addendum-quotes-markup-symbols.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`AGENTS.md`](AGENTS.md); [`uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md) §10 #docs #core
 
 - [x] [UDGO-R05] **UCODE v4 hub + variables doc cross-link** — uDosDev [`UCODE_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md) in [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md) §10 points to canonical spec #docs #core

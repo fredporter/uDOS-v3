@@ -28,6 +28,8 @@ These files are the **engineering handoff** line for the uDos family. They infor
 | uCode v4 | [`UCODE_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md) | **Locked** — language + Go/TS runtime; POKE/MCP; pairs with [uDos-variables-ucode-v4.md](uDos-variables-ucode-v4.md) |
 | uCode v4 addendum | [`UCODE_v4_addendum-quotes-markup-symbols.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_addendum-quotes-markup-symbols.md) | **Locked** — quotes/escapes, markup output, paths, reserved `\\`, symbols, whitespace |
 | uCode v4 addendum 2 | [`UCODE_v4_addendum-2-linking-navigation.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_addendum-2-linking-navigation.md) | **Draft** — linking / navigation (`@`, `::`, wikilinks, GitHub, sequence hints); lock via uDosDev **[UDEV-R12](../../../uDosConnect/uDosDev/TASKS.md)** |
+| uCode v4 addendum 3 | [`UCODE_v4_addendum-3-execution-runtime-sandboxing.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_addendum-3-execution-runtime-sandboxing.md) | **Locked** — execution modes, sandboxing, prompts, limits, logging, TUI alignment |
+| v4.4–v4.8 rounds (planning) | [`uDos-v4-rounds-consolidated-execution-plan.md`](../../../uDosConnect/uDosDev/docs/future/uDos-v4-rounds-consolidated-execution-plan.md) | **Locked for planning** — dependency graph, deliverables, success criteria |
 
 **Sibling products & family analysis (same `specs/v4/` folder):** listed in [uDosDev `README.md`](../../../uDosConnect/uDosDev/docs/specs/v4/README.md); not implemented inside uDosGo, but part of the **full v4 inventory** for cross-repo alignment.
 

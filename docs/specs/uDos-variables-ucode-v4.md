@@ -228,6 +228,7 @@ The **complete** uCode v4 language — command DSL, scripting keywords, `POKE`/M
 - **[`UCODE_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md)** (`~/Code/uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md`)
 - **[`UCODE_v4_addendum-quotes-markup-symbols.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_addendum-quotes-markup-symbols.md)** — quotes, escapes, markup/HTML mapping, path backslashes, reserved `\\`, whitespace, continuation (**locked**)
 - **[`UCODE_v4_addendum-2-linking-navigation.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_addendum-2-linking-navigation.md)** — `@workspace`, `::` schemes, wikilinks, navigation hints (**draft**)
+- **[`UCODE_v4_addendum-3-execution-runtime-sandboxing.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_addendum-3-execution-runtime-sandboxing.md)** — execution modes, prompts, sandboxing, limits (**locked**)
 
 This document (**uDos Variables**) only defines **`$variable$` interpolation** in markdown surfaces and how namespaces map to family schemas. Session `LET` / inline `$x$` behaviour follows **UCODE v4** when the interpreter is present.
 
@@ -235,4 +236,4 @@ This document (**uDos Variables**) only defines **`$variable$` interpolation** i
 
 ## 11. One-line summary (this doc)
 
-**Inkdown `$...$` math stays.** **uDos Variables v4** adds `$VAR$` and dotted paths for core, contact, story, spatial, gameplay, and project keys — with frontmatter first; full **uCode v4** syntax and runtime are in **[UCODE_v4.md](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md)** and **[UCODE_v4_addendum-quotes-markup-symbols.md](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_addendum-quotes-markup-symbols.md)**. **uDosGo** owns registry + MCP shape; Macdown/Chatdown/ThinUI are consumers.
+**Inkdown `$...$` math stays.** **uDos Variables v4** adds `$VAR$` and dotted paths for core, contact, story, spatial, gameplay, and project keys — with frontmatter first; full **uCode v4** surface is **[UCODE_v4.md](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md)** plus addenda (quotes/markup, linking draft, execution/sandboxing). **uDosGo** owns registry + MCP shape; Macdown/Chatdown/ThinUI are consumers.
