@@ -10,6 +10,8 @@ Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uD
 
 ## Done
 
+- [x] [UDGO-R12] **Unified data schema WP / HubSpot / uDos v1 (uDosDev)** — [`UNIFIED_DATA_SCHEMA_WP_HUBSPOT_uDOS_v1.md`](../uDosConnect/uDosDev/docs/specs/v4/UNIFIED_DATA_SCHEMA_WP_HUBSPOT_uDOS_v1.md); [`CONTACT_SCHEMA_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md) cross-link; [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); uDosDev **[UDEV-R18](../uDosConnect/uDosDev/TASKS.md)** #docs #core
+
 - [x] [UDGO-R11] **uSpace cloud fallback v1 (uDosDev)** — [`SPATIAL_HOSTING_USPACE_CLOUD_FALLBACK_v1.md`](../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_HOSTING_USPACE_CLOUD_FALLBACK_v1.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); uDosDev **[UDEV-R17](../uDosConnect/uDosDev/TASKS.md)** #docs #core
 
 - [x] [UDGO-R10] **Spatial + storage ecosystem v1 (uDosDev)** — [`SPATIAL_STORAGE_ECOSYSTEM_v1.md`](../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_STORAGE_ECOSYSTEM_v1.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; uDosDev **[UDEV-R16](../uDosConnect/uDosDev/TASKS.md)** #docs #core

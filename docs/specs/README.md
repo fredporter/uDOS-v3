@@ -18,6 +18,7 @@ These files are the **engineering handoff** line for the uDos family. They infor
 | GFM Enhanced | [`GFM_Enhanced_Specification_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/GFM_Enhanced_Specification_v4.md) | Authoring rules for vault markdown, feed text, and operator-visible docs |
 | Task syntax | [`TASK_SPEC_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/TASK_SPEC_v4.md) | Aligns Hivemind task graph + events with family task grammar |
 | Contact schema | [`CONTACT_SCHEMA_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md) | Informs `packages/schemas` contact shape + WordPress bridge |
+| Unified data (WP / HubSpot / uDos) | [`UNIFIED_DATA_SCHEMA_WP_HUBSPOT_uDOS_v1.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UNIFIED_DATA_SCHEMA_WP_HUBSPOT_uDOS_v1.md) | **Locked** — `wp_users` / `wp_usermeta` ↔ HubSpot ↔ `$user.*$`, `wp_udos_activity`, FDX; pairs with CONTACT_SCHEMA |
 | Contacts DB template | [`contacts-db-template.txt`](../../../uDosConnect/uDosDev/docs/specs/v4/contacts-db-template.txt) | Reference layout for contact persistence / imports |
 | Grid v4 | [`uDos-Grid-Spec-v4-2-1.md`](../../../uDosConnect/uDosDev/docs/specs/v4/uDos-Grid-Spec-v4-2-1.md) | Align with [GRID-GRAPHICS-CANON.md](../GRID-GRAPHICS-CANON.md) and `packages/shared` constants |
 | Spatial + storage ecosystem | [`SPATIAL_STORAGE_ECOSYSTEM_v1.md`](../../../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_STORAGE_ECOSYSTEM_v1.md) | **Locked** — uCell, uTile / uGrid, uCoin, uRing; complements grid + PlaceRef; **v4.4.0** rounds plan |
