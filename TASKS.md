@@ -10,6 +10,8 @@ Task layout (family dev standard **v4**). **Family rounds index:** [`../uDosConn
 
 ## Done
 
+- [x] [UDGO-R24] **ThinUI — Classic Modern theme + local fonts** — `data-thinui-theme` on `html`; [`apps/thinui/src/classic-modern.css`](apps/thinui/src/classic-modern.css) + [`theme.ts`](apps/thinui/src/theme.ts) + [`ThemeSwitcher.tsx`](apps/thinui/src/ThemeSwitcher.tsx); `?theme=classic-modern`; [`apps/thinui/FONTS.md`](apps/thinui/FONTS.md) (`public/fonts` → sibling `~/Code/fonts`, gitignored); pairs with uDosDev [`CLASSIC_MODERN_INSPIRATION_KIT_v1.md`](../uDosConnect/uDosDev/docs/specs/v4/CLASSIC_MODERN_INSPIRATION_KIT_v1.md) #feature #core
+
 - [x] [UDGO-R23] **Sonic flashable OS images (Ubuntu / Xubuntu / Classic Modern Mint)** — uDosDev [`SONIC_v4_FLASHABLE_OS_IMAGES.md`](../uDosConnect/uDosDev/docs/specs/v4/SONIC_v4_FLASHABLE_OS_IMAGES.md); complete brief Part 2 + spec hub; uDosConnect **Task** wording sweep #docs #core
 
 - [x] [UDGO-R22] **uCode v4 implementation lock (family)** — uDosDev [`UCODE_v4_IMPLEMENTATION_LOCK.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_IMPLEMENTATION_LOCK.md); [`UCODE_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md) integration link; uDosGo [`docs/specs/README.md`](docs/specs/README.md) + [`README.md`](README.md) #docs #core

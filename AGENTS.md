@@ -2,6 +2,10 @@
 
 **uDos** = **Universal Device Operating Surface** (canonical expansion from v3+). Capital **D** is intentional—do not “fix” to `udos` / `uDOS` in new work. From **dev standard v4**, prefer **uDos** in new/edited copy; leave historical **uDOS** until the file is revised ([dev-process-v4.md](docs/dev-process-v4.md)). Do not introduce a separate “UDO” / “UDOs” acronym in this family’s docs (reserved elsewhere in the market).
 
+## ThinUI (browser)
+
+- **Themes:** default dark + **Classic Modern** (`html[data-thinui-theme="classic-modern"]`) — [`apps/thinui/README.md`](apps/thinui/README.md), local font symlink [`apps/thinui/FONTS.md`](apps/thinui/FONTS.md); family [`CLASSIC_MODERN_INSPIRATION_KIT_v1.md`](../uDosConnect/uDosDev/docs/specs/v4/CLASSIC_MODERN_INSPIRATION_KIT_v1.md) (USXD Part 9).
+
 ## Shell / CLI aliases (v4)
 
 - **Retro BASIC → modern commands:** [`docs/specs/RETRO_COMMAND_ALIASES_v4.md`](docs/specs/RETRO_COMMAND_ALIASES_v4.md) — **`@udos/shared`** [`packages/shared/src/retro-command-aliases.ts`](packages/shared/src/retro-command-aliases.ts). **ThinUI** feed submit uses **`resolveRetroForSingleLineInput()`**; **Host** keeps **`metadata.retroAlias`**. Future Shell TUI: same helper per line.
