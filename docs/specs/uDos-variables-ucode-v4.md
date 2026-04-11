@@ -5,7 +5,7 @@
 **Extension:** `$variable$`, `{$variable$}`, nested fields, optional filters — **without** deprecating math formulas  
 **Goal:** Lightweight substitution across markdown surfaces, **uCode v4** session keys, and spatial/gameplay context — precursor to full uCode evaluator in [`uDosConnect/uDosDev/docs/future/uDos-v4-gameplay-chatdown-development-cycle-brief.md`](../../../uDosConnect/uDosDev/docs/future/uDos-v4-gameplay-chatdown-development-cycle-brief.md) (family future brief)
 
-**Related family specs:** **[UCODE v4](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md)** (full language + commands) · [GFM Enhanced](../../../uDosConnect/uDosDev/docs/specs/v4/GFM_Enhanced_Specification_v4.md) · [CONTACT_SCHEMA_v4](../../../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md) · [uDos-Grid](../../../uDosConnect/uDosDev/docs/specs/v4/uDos-Grid-Spec-v4-2-1.md) · [TASK_SPEC_v4](../../../uDosConnect/uDosDev/docs/specs/v4/TASK_SPEC_v4.md)
+**Related family specs:** **[UCODE v4](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md)** (full language + commands) · [GFM Enhanced](../../../uDosConnect/uDosDev/docs/specs/v4/GFM_Enhanced_Specification_v4.md) · [CONTACT_SCHEMA_v4](../../../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md) · [uDos-Grid](../../../uDosConnect/uDosDev/docs/specs/v4/uDos-Grid-Spec-v4-2-1.md) · [Spatial + storage ecosystem v1](../../../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_STORAGE_ECOSYSTEM_v1.md) · [TASK_SPEC_v4](../../../uDosConnect/uDosDev/docs/specs/v4/TASK_SPEC_v4.md)
 
 ---
 

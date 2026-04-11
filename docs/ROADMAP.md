@@ -11,6 +11,7 @@ This monorepo implements the **runnable integration** slice of the family platfo
 | Theme | Specs | Direction for uDosGo |
 | --- | --- | --- |
 | **Core + grid** | [`uDos-Spec-v4.md`](../../uDosConnect/uDosDev/docs/specs/v4/uDos-Spec-v4.md), [`uDos-Grid-Spec-v4-2-1.md`](../../uDosConnect/uDosDev/docs/specs/v4/uDos-Grid-Spec-v4-2-1.md) | Reconcile with [ARCHITECTURE.md](ARCHITECTURE.md), [GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md), ThinUI + `packages/shared` |
+| **Spatial + storage** | [`SPATIAL_STORAGE_ECOSYSTEM_v1.md`](../../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_STORAGE_ECOSYSTEM_v1.md) | **Locked** — uCell / uTile / uGrid / uCoin / uRing vocabulary and economics; map + NFC alignment (**v4.4.0** in consolidated rounds plan) |
 | **Tasks + markdown** | [`TASK_SPEC_v4.md`](../../uDosConnect/uDosDev/docs/specs/v4/TASK_SPEC_v4.md), [`GFM_Enhanced_Specification_v4.md`](../../uDosConnect/uDosDev/docs/specs/v4/GFM_Enhanced_Specification_v4.md) | Hivemind task graph, feed text, vault docs |
 | **Contacts** | [`CONTACT_SCHEMA_v4.md`](../../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md), [`contacts-db-template.txt`](../../uDosConnect/uDosDev/docs/specs/v4/contacts-db-template.txt) | `packages/schemas/contact`, WP bridge |
 | **Shell TUI (shared)** | [`SHELL_v4_command-palette.md`](../../uDosConnect/uDosDev/docs/specs/v4/SHELL_v4_command-palette.md), [`SHELL_v4_bubble-tea-tui.md`](../../uDosConnect/uDosDev/docs/specs/v4/SHELL_v4_bubble-tea-tui.md) | First Host/operator TUI path; **same palette + viewport rules** as **SonicScrewdriver** |

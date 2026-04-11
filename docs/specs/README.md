@@ -20,6 +20,7 @@ These files are the **engineering handoff** line for the uDos family. They infor
 | Contact schema | [`CONTACT_SCHEMA_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md) | Informs `packages/schemas` contact shape + WordPress bridge |
 | Contacts DB template | [`contacts-db-template.txt`](../../../uDosConnect/uDosDev/docs/specs/v4/contacts-db-template.txt) | Reference layout for contact persistence / imports |
 | Grid v4 | [`uDos-Grid-Spec-v4-2-1.md`](../../../uDosConnect/uDosDev/docs/specs/v4/uDos-Grid-Spec-v4-2-1.md) | Align with [GRID-GRAPHICS-CANON.md](../GRID-GRAPHICS-CANON.md) and `packages/shared` constants |
+| Spatial + storage ecosystem | [`SPATIAL_STORAGE_ECOSYSTEM_v1.md`](../../../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_STORAGE_ECOSYSTEM_v1.md) | **Locked** — uCell, uTile / uGrid, uCoin, uRing; complements grid + PlaceRef; **v4.4.0** rounds plan |
 | Command palette | [`SHELL_v4_command-palette.md`](../../../uDosConnect/uDosDev/docs/specs/v4/SHELL_v4_command-palette.md) | Shared **`:`** / **`/`** palette semantics when a Shell TUI fronts Host or tools |
 | Bubble Tea TUI | [`SHELL_v4_bubble-tea-tui.md`](../../../uDosConnect/uDosDev/docs/specs/v4/SHELL_v4_bubble-tea-tui.md) | Viewport tiers, keybindings, Lip Gloss themes — shared with **SonicScrewdriver** |
 | Sonic device DB | [`SONIC_v4_device-database.md`](../../../uDosConnect/uDosDev/docs/specs/v4/SONIC_v4_device-database.md) | Handoff for device catalog / SQLite expectations when integration consumes Sonic data |
