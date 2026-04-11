@@ -10,6 +10,10 @@ Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uD
 
 ## Done
 
+- [x] [UDGO-R18] **Round F: Roadmap v4 (uDosDev)** — [`ROUND_F_ROADMAP_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/ROUND_F_ROADMAP_v4.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); uDosDev **[UDEV-R24](../uDosConnect/uDosDev/TASKS.md)** #docs #core
+
+- [x] [UDGO-R17] **Round D: Publishing and graphics v4 (uDosDev)** — [`ROUND_D_PUBLISHING_GRAPHICS_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/ROUND_D_PUBLISHING_GRAPHICS_v4.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); repo **[UniversalVectorIL](../UniversalVectorIL)**; uDosDev **[UDEV-R23](../uDosConnect/uDosDev/TASKS.md)** #docs #core
+
 - [x] [UDGO-R16] **Round C: Physical layer v4 (uDosDev)** — [`ROUND_C_PHYSICAL_LAYER_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/ROUND_C_PHYSICAL_LAYER_v4.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); uDosDev **[UDEV-R22](../uDosConnect/uDosDev/TASKS.md)** #docs #core
 
 - [x] [UDGO-R15] **Round B: Product boundaries v4 (uDosDev)** — [`ROUND_B_PRODUCT_BOUNDARIES_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/ROUND_B_PRODUCT_BOUNDARIES_v4.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); uDosDev **[UDEV-R21](../uDosConnect/uDosDev/TASKS.md)** #docs #core
