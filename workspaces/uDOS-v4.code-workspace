@@ -1,12 +1,42 @@
 {
-  "name": "uDos v4 — full ecosystem",
+  "name": "uDos v4 — uDosGo + family",
   "folders": [
-    { "name": "uDosGo", "path": ".." },
-    { "name": "Chatdown", "path": "../../Chatdown" },
-    { "name": "UniversalSurfaceXD", "path": "../../UniversalSurfaceXD" },
-    { "name": "uDosConnect", "path": "../../uDosConnect" },
-    { "name": "SonicScrewdriver", "path": "../../SonicScrewdriver" },
-    { "name": "Ventoy (fork)", "path": "../../Ventoy" }
+    {
+      "name": "uDosGo",
+      "path": ".."
+    },
+    {
+      "name": "uChatDown",
+      "path": "../../uChatDown"
+    },
+    {
+      "name": "UniversalSurfaceXD",
+      "path": "../../UniversalSurfaceXD"
+    },
+    {
+      "name": "UniversalVectorIL",
+      "path": "../../UniversalVectorIL"
+    },
+    {
+      "name": "uDosConnect",
+      "path": "../../uDosConnect"
+    },
+    {
+      "name": "uMacDown",
+      "path": "../../uMacDown"
+    },
+    {
+      "name": "uFeedThru",
+      "path": "../../uFeedThru"
+    },
+    {
+      "name": "SonicScrewdriver",
+      "path": "../../SonicScrewdriver"
+    },
+    {
+      "name": "Ventoy (fork)",
+      "path": "../../Ventoy"
+    }
   ],
   "settings": {
     "files.exclude": {

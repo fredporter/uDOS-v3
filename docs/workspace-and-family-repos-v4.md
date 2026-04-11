@@ -4,7 +4,7 @@
 
 **Canonical local spine (2026+):** clone this monorepo as **`~/Code/uDosGo/`**; governance, public docs, and `v2-reference` live under **`~/Code/uDosConnect/`** — see **[uDosConnect: `docs/family-workspace-layout.md`](https://github.com/fredporter/uDosConnect/blob/main/docs/family-workspace-layout.md)**.
 
-**Cursor workspaces:** open **[`uDosGo.code-workspace`](../uDosGo.code-workspace)** at repo root, or focused files under **[`workspaces/`](../workspaces/README.md)** (`uDOS-v4`, Linkdown-v4, Macdown-v4 — paths relative to `workspaces/`).
+**Cursor workspaces:** open **[`uDosGo.code-workspace`](../uDosGo.code-workspace)** at repo root, or focused files under **[`workspaces/`](../workspaces/README.md)** (`uDOS-v4`, Linkdown-v4, uMacDown-v4 — paths relative to `workspaces/`).
 
 ## What the v3.0.1 demo needs inside **`uDosGo`** (this monorepo)
 

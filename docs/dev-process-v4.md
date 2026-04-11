@@ -18,7 +18,7 @@ Prefer **uDos** (see [repo-identity-and-rename-v4.md](repo-identity-and-rename-v
 | --- | --- |
 | **`.local/`** | Untracked thinking, scratch, experiments (must stay out of Git). |
 | **`.compost/`** | Untracked decay pile for replaced files (optional). |
-| **`TASKS.md`** | Single active task surface (Task Forge: Backlog → In Progress → Blocked → Done). |
+| **`TASKS.md`** | Single active task surface (Task: Backlog → In Progress → Blocked → Done). |
 | **`/docs/`**, **`/apps/`**, **`/packages/`** | Tracked system code and canonical docs. |
 
 Flow: **`.local` → `TASKS.md` → `/src` (or apps/packages) → `.compost`**.

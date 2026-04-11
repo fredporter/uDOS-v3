@@ -36,7 +36,7 @@ This monorepo implements the **runnable integration** slice of the family platfo
 
 | Area | State | Notes |
 | --- | --- | --- |
-| **Family dev standard (v4)** | **Adopted** | Task Forge, `dev-process-v4.md`, `.local` / `.compost`; root `package.json` meta **4.x** is dev-standard semver (not the v3.0.1 demo label). |
+| **Family dev standard (v4)** | **Adopted** | Task, `dev-process-v4.md`, `.local` / `.compost`; root `package.json` meta **4.x** is dev-standard semver (not the v3.0.1 demo label). |
 | **v3.0.x milestones (product)** | **Closed (M1–M8)** | [MILESTONES.md](MILESTONES.md) — local demo, reliability, second scenario, USXD validation sweep, closure tranche. |
 | **Docs consolidation (plan P0–P4)** | **Done** | [docs/dev/docs-v4-consolidation-plan.md](dev/docs-v4-consolidation-plan.md); hub is [README.md](README.md). |
 | **USXD validation (integration + lab)** | **Done** | [`[UDGO-R01]`](../TASKS.md): `npm run validate:usxd:parity`; [specs/README.md](specs/README.md). |

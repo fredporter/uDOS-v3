@@ -1,10 +1,22 @@
 {
-  "name": "Macdown v4 — app + Chatdown + USXD",
+  "name": "uMacDown v4 — uChatDown + USXD lab",
   "folders": [
-    { "name": "uDosGo", "path": ".." },
-    { "name": "Macdown", "path": "../../Macdown" },
-    { "name": "Chatdown", "path": "../../Chatdown" },
-    { "name": "UniversalSurfaceXD", "path": "../../UniversalSurfaceXD" }
+    {
+      "name": "uDosGo",
+      "path": ".."
+    },
+    {
+      "name": "uMacDown",
+      "path": "../../uMacDown"
+    },
+    {
+      "name": "uChatDown",
+      "path": "../../uChatDown"
+    },
+    {
+      "name": "UniversalSurfaceXD",
+      "path": "../../UniversalSurfaceXD"
+    }
   ],
   "settings": {
     "files.exclude": {

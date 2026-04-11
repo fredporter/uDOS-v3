@@ -1,10 +1,22 @@
 {
-  "name": "Linkdown v4 — editor + Chatdown",
+  "name": "Linkdown v4 — editor + uChatDown",
   "folders": [
-    { "name": "uDosGo", "path": ".." },
-    { "name": "Linkdown", "path": "../../Linkdown" },
-    { "name": "Linkdown-premium", "path": "../../Linkdown-premium" },
-    { "name": "Chatdown", "path": "../../Chatdown" }
+    {
+      "name": "uDosGo",
+      "path": ".."
+    },
+    {
+      "name": "Linkdown",
+      "path": "../../Linkdown"
+    },
+    {
+      "name": "Linkdown-premium",
+      "path": "../../Linkdown-premium"
+    },
+    {
+      "name": "uChatDown",
+      "path": "../../uChatDown"
+    }
   ],
   "settings": {
     "files.exclude": {

@@ -53,7 +53,7 @@
 | `README.md`, `docs/**`, `wiki/**` | **Authoritative** | Many **`uDOS-host`** / **`uDOS-family`** mentions describe the **Linux host runtime repo** and historical layout — **separate product** from **uDos-Go**. |
 | **Drift** | Optional doc sweep | When describing “integration monorepo”, prefer **uDos-Go** / **`~/Code/uDosGo/`**; keep **`uDOS-host`** where the actual host repo is meant. |
 
-### Chatdown
+### uChatDown
 
 | Location | Class | Notes |
 | --- | --- | --- |
@@ -63,7 +63,7 @@
 
 | File | Class | Notes |
 | --- | --- | --- |
-| `Dev-tasks.md`, `Dev-workflow.md`, `Dev-checklist.md` | **Universal UDN spec** | Large, project-agnostic **Task Forge / UDN** references — **not** obsolete; do **not** move to `.compost` without an explicit replacement home. |
+| `Dev-tasks.md`, `Dev-workflow.md`, `Dev-checklist.md` | **Universal UDN spec** | Large, project-agnostic **Task / UDN** references — **not** obsolete; do **not** move to `.compost` without an explicit replacement home. |
 | `WORKSPACES.md` | **Authoritative** | Multi-root picker table — maintain when workspaces change. |
 | **Stray duplicates** | If you copy-paste an entire repo `README` here | **Candidate for `~/Code/.compost/`** after confirming the repo copy is canonical. |
 
@@ -75,7 +75,7 @@
 | --- | --- |
 | **`uDOS-host`** | The separate GitHub repo for host runtime / contract JSON — not **uDos-Go**. |
 | **`uDOS-v3`** (URL) | Historical URL in rename docs or migration notes only. |
-| **`Syncdown-app`** | uDosDev still uses this for **Macdown** repo name until rename — [SYNCDOWN_v4.md](../../../uDosConnect/uDosDev/docs/specs/v4/SYNCDOWN_v4.md). |
+| **`Syncdown-app`** | Historical folder name for the native app; **clone** **`~/Code/uMacDown`**. uDosDev [SYNCDOWN_v4.md](../../../uDosConnect/uDosDev/docs/specs/v4/SYNCDOWN_v4.md) may still say “Macdown” in prose until that pack is revised. |
 | **`uDos-Go`** | GitHub display / link for integration monorepo ([uDosGo](https://github.com/fredporter/uDosGo)). |
 
 ---
@@ -106,7 +106,7 @@
 
 | Item | Verdict | Action |
 | --- | --- | --- |
-| **`~/Code/Dev-tasks.md` / `Dev-workflow.md` / `Dev-checklist.md`** | **Keep** (or one canonical home later) | Universal **UDN / Task Forge** spec (~2.5k lines combined) — **not** a stale duplicate of `uDosGo/docs/dev-checklist-v4.md` (that file is the **short** monorepo checklist). Do not delete unless you merge into a single repo and update all references. |
+| **`~/Code/Dev-tasks.md` / `Dev-workflow.md` / `Dev-checklist.md`** | **Keep** (or one canonical home later) | Universal **UDN / Task** spec (~2.5k lines combined) — **not** a stale duplicate of `uDosGo/docs/dev-checklist-v4.md` (that file is the **short** monorepo checklist). Do not delete unless you merge into a single repo and update all references. |
 | **`~/Code/WORKSPACES.md`** | **Keep** | Current multi-root picker; small and maintained. |
 | **`uDosGo` planning pack nested `docs/*.md` (duplicates)** | **Not needed in git** | **Removed** from the repo; canonical **`docs/`** only. Backups retain historical text. |
 | **`uDosConnect/v2-reference/` (~74MB)** | **Keep in tree** | **Tracked archive** — intentional; not “junk.” Do not delete to save space without a deliberate archive policy. |

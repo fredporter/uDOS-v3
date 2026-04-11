@@ -2,9 +2,12 @@
   "name": "uDos v4 — uDosGo + family",
   "folders": [
     { "name": "uDosGo (this repo)", "path": "." },
-    { "name": "Chatdown", "path": "../Chatdown" },
+    { "name": "uChatDown", "path": "../uChatDown" },
     { "name": "UniversalSurfaceXD", "path": "../UniversalSurfaceXD" },
+    { "name": "UniversalVectorIL", "path": "../UniversalVectorIL" },
     { "name": "uDosConnect", "path": "../uDosConnect" },
+    { "name": "uMacDown", "path": "../uMacDown" },
+    { "name": "uFeedThru", "path": "../uFeedThru" },
     { "name": "SonicScrewdriver", "path": "../SonicScrewdriver" },
     { "name": "Ventoy (fork)", "path": "../Ventoy" }
   ],

@@ -1,6 +1,6 @@
 # Dev checklist (v4)
 
-Fast repeatable pass — aligns with family Task Forge / `.local` / `.compost` rules.
+Fast repeatable pass — aligns with family Task / `.local` / `.compost` rules.
 
 ## Pre-dev (30–60s)
 
