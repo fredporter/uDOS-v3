@@ -10,6 +10,8 @@ Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uD
 
 ## Done
 
+- [x] [UDGO-R11] **uSpace cloud fallback v1 (uDosDev)** — [`SPATIAL_HOSTING_USPACE_CLOUD_FALLBACK_v1.md`](../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_HOSTING_USPACE_CLOUD_FALLBACK_v1.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); uDosDev **[UDEV-R17](../uDosConnect/uDosDev/TASKS.md)** #docs #core
+
 - [x] [UDGO-R10] **Spatial + storage ecosystem v1 (uDosDev)** — [`SPATIAL_STORAGE_ECOSYSTEM_v1.md`](../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_STORAGE_ECOSYSTEM_v1.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; uDosDev **[UDEV-R16](../uDosConnect/uDosDev/TASKS.md)** #docs #core
 
 - [x] [UDGO-R09] **uCode v4 family lock (uDosDev)** — [`UCODE_v4_family-lock-2026-04-11.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_family-lock-2026-04-11.md); addendum 2 **Locked**; [`docs/specs/README.md`](docs/specs/README.md); [`AGENTS.md`](AGENTS.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md) §10; uDosDev **[UDEV-R15](../uDosConnect/uDosDev/TASKS.md)** #docs #core

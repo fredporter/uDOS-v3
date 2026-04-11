@@ -103,6 +103,7 @@
 
 - **Governance copies** stay in **`uDosConnect/uDosDev/docs/specs/v4/`** — this monorepo **links**, not forks, except where implementation demands inline excerpt.
 - **Spatial / storage ecosystem (locked):** [`SPATIAL_STORAGE_ECOSYSTEM_v1.md`](../../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_STORAGE_ECOSYSTEM_v1.md) — **uCell**, **uTile** / **uGrid**, **uCoin**, **uRing**; referenced from the family roadmap and **v4.4.0** consolidated rounds plan for PlaceRef / map / NFC alignment.
+- **uSpace / cloud fallback (locked):** [`SPATIAL_HOSTING_USPACE_CLOUD_FALLBACK_v1.md`](../../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_HOSTING_USPACE_CLOUD_FALLBACK_v1.md) — cloud tiers, view limits, free tier, illustrative **`space.publish`** hooks.
 - **TASKS:** [UDGO-R02](../../TASKS.md) tracks spec drift; consolidation **does not** replace that — it makes `docs/` easier to keep aligned.
 
 ---
