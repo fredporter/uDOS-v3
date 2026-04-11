@@ -10,6 +10,8 @@ Task layout (family dev standard **v4**). **Family rounds index:** [`../uDosConn
 
 ## Done
 
+- [x] [UDGO-R22] **uCode v4 implementation lock (family)** — uDosDev [`UCODE_v4_IMPLEMENTATION_LOCK.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_IMPLEMENTATION_LOCK.md); [`UCODE_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md) integration link; uDosGo [`docs/specs/README.md`](docs/specs/README.md) + [`README.md`](README.md) #docs #core
+
 - [x] [UDGO-R21] **Sonic v4 brief + colour addendum + blocktext (family lock)** — uDosDev [`SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md`](../uDosConnect/uDosDev/docs/specs/v4/SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md), [`COLOUR_SPEC_v4_ADDENDUM_SONIC_USXD.md`](../uDosConnect/uDosDev/docs/specs/v4/COLOUR_SPEC_v4_ADDENDUM_SONIC_USXD.md); uDosGo [`examples/usxd-ventoy-boot-menu.example.json`](examples/usxd-ventoy-boot-menu.example.json), [`scripts/blocktext.mjs`](scripts/blocktext.mjs), [`docs/specs/README.md`](docs/specs/README.md); INTEGRATION cross-link #docs #core
 
 - [x] [UDGO-R20] **Retro BASIC command aliases (v4)** — [`docs/specs/RETRO_COMMAND_ALIASES_v4.md`](docs/specs/RETRO_COMMAND_ALIASES_v4.md); [`packages/shared/src/retro-command-aliases.ts`](packages/shared/src/retro-command-aliases.ts); ThinUI feed submit + Host `metadata.retroAlias`; `npm run retro:line`; [`docs/specs/README.md`](docs/specs/README.md) hub row #docs #core

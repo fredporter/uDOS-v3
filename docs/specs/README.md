@@ -64,6 +64,7 @@ These files are the **engineering handoff** line for the uDos family. They infor
 | [RETRO_COMMAND_ALIASES_v4.md](RETRO_COMMAND_ALIASES_v4.md) | **Locked** — retro BASIC-style CLI aliases (`PEEK`/`POKE`, `DIR`, `TYPE`, …); **`@udos/shared`** `retro-command-aliases.ts` |
 | Sonic v4 (family) | [uDosDev `SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md`](../../../uDosConnect/uDosDev/docs/specs/v4/SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md) — locked umbrella; Ventoy/USXD/uDosDocs/**blocktext** |
 | Colour — Sonic & USXD (family) | [uDosDev `COLOUR_SPEC_v4_ADDENDUM_SONIC_USXD.md`](../../../uDosConnect/uDosDev/docs/specs/v4/COLOUR_SPEC_v4_ADDENDUM_SONIC_USXD.md) |
+| uCode v4 — implementation (family) | [uDosDev `UCODE_v4_IMPLEMENTATION_LOCK.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_IMPLEMENTATION_LOCK.md) — Go `pkg/ucode/*`, `udos ucode run|check|repl|tui` |
 
 ---
 

@@ -38,6 +38,7 @@ Not the whole uDOS family. Not the full product vision. **One clean loop.**
 | [docs/specs/README.md](docs/specs/README.md) | **Specifications hub** (USXD, engines, schema paths, ThinUI lab) |
 | [docs/specs/RETRO_COMMAND_ALIASES_v4.md](docs/specs/RETRO_COMMAND_ALIASES_v4.md) | **Locked** — retro CLI aliases (`PEEK`/`POKE`, …) + `@udos/shared` resolver; ThinUI feed + `npm run retro:line` |
 | Sonic v4 brief (family) | [uDosDev `SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md`](../uDosConnect/uDosDev/docs/specs/v4/SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md) · **`npm run blocktext`** |
+| uCode v4 implementation lock (family) | [uDosDev `UCODE_v4_IMPLEMENTATION_LOCK.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4_IMPLEMENTATION_LOCK.md) |
 | [docs/GRID-GRAPHICS-CANON.md](docs/GRID-GRAPHICS-CANON.md) | **Locked** 80×30, **16×24**, teletext bridge, UniversalSurfaceXD pairing |
 | [docs/style-guide.md](docs/style-guide.md) | **Style guide** — tokens, typography, USXD `usxd/0.1` frontmatter, ASCII vs teletext |
 | [docs/DEMO.md](docs/DEMO.md) | Gold-path scenario, expected outputs, operator steps |
