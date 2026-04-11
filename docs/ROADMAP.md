@@ -16,7 +16,7 @@ This monorepo implements the **runnable integration** slice of the family platfo
 | **Shell TUI (shared)** | [`SHELL_v4_command-palette.md`](../../uDosConnect/uDosDev/docs/specs/v4/SHELL_v4_command-palette.md), [`SHELL_v4_bubble-tea-tui.md`](../../uDosConnect/uDosDev/docs/specs/v4/SHELL_v4_bubble-tea-tui.md) | First Host/operator TUI path; **same palette + viewport rules** as **SonicScrewdriver** |
 | **Sonic handoff** | [`SONIC_v4_device-database.md`](../../uDosConnect/uDosDev/docs/specs/v4/SONIC_v4_device-database.md), [`SONIC_v4_ewaste-triage.md`](../../uDosConnect/uDosDev/docs/specs/v4/SONIC_v4_ewaste-triage.md) | APIs and UX when ThinUI or Host consumes catalog / triage data from Sonic |
 | **USXD → GUI** | [`INTEGRATION_v4_usxd-operational-gui.md`](../../uDosConnect/uDosDev/docs/specs/v4/INTEGRATION_v4_usxd-operational-gui.md) | **Browser GUI:** `apps/thinui` (React) from validated USXD; **UniversalSurfaceXD** lab + `ux:validate-surfaces`; terminal surfaces per **`SHELL_v4_*`** |
-| **Variables + uCode** | [docs/specs/uDos-variables-ucode-v4.md](specs/uDos-variables-ucode-v4.md) | **Draft** — `$VAR$` / dotted paths for markdown surfaces; session via **uCode v4**; MCP/registry TBD; phases A→C |
+| **Variables + uCode** | [docs/specs/uDos-variables-ucode-v4.md](specs/uDos-variables-ucode-v4.md), [`UCODE_v4.md`](../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md) | **Variables doc** — `$VAR$` / dotted paths; **uCode v4** — locked language + Go/TS runtime, POKE/MCP; phases A→C for variables layer |
 
 **Execution tracking:** [TASKS.md](../TASKS.md) · family rounds [v4-dev-rounds.md](../../uDosConnect/uDosDev/docs/v4-dev-rounds.md).
 

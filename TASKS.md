@@ -10,6 +10,8 @@ Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uD
 
 ## Done
 
+- [x] [UDGO-R05] **UCODE v4 hub + variables doc cross-link** — uDosDev [`UCODE_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md) in [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md) §10 points to canonical spec #docs #core
+
 - [x] [UDGO-R04] **uDos Variables + uCode v4 dev spec** — [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md) (roadmap phases A–C; Inkdown formula heritage; Linkdown → **uDosGo** / uCode; commands reference stub + §11 scaffold); [`docs/specs/README.md`](docs/specs/README.md) + [`docs/ROADMAP.md`](docs/ROADMAP.md) linked #docs #core
 
 - [x] [UDGO-NEXT] **Doc drift maintenance** — `npm run doc:drift` clean (2026-04); legacy map table unchanged #docs

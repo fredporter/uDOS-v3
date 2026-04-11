@@ -25,6 +25,7 @@ These files are the **engineering handoff** line for the uDos family. They infor
 | Sonic device DB | [`SONIC_v4_device-database.md`](../../../uDosConnect/uDosDev/docs/specs/v4/SONIC_v4_device-database.md) | Handoff for device catalog / SQLite expectations when integration consumes Sonic data |
 | E-waste triage | [`SONIC_v4_ewaste-triage.md`](../../../uDosConnect/uDosDev/docs/specs/v4/SONIC_v4_ewaste-triage.md) | Rules matrix for recovery / disposition flows surfaced in family UIs |
 | USXD → operational GUI | [`INTEGRATION_v4_usxd-operational-gui.md`](../../../uDosConnect/uDosDev/docs/specs/v4/INTEGRATION_v4_usxd-operational-gui.md) | **Locked** — design → validate → generate → wire **`apps/thinui`** (React) + Shell/Sonic (Bubble Tea); USXD lab reference |
+| uCode v4 | [`UCODE_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md) | **Locked** — language + Go/TS runtime; POKE/MCP; pairs with [uDos-variables-ucode-v4.md](uDos-variables-ucode-v4.md) |
 
 **Sibling products & family analysis (same `specs/v4/` folder):** listed in [uDosDev `README.md`](../../../uDosConnect/uDosDev/docs/specs/v4/README.md); not implemented inside uDosGo, but part of the **full v4 inventory** for cross-repo alignment.
 

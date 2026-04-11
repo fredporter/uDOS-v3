@@ -5,7 +5,7 @@
 **Extension:** `$variable$`, `{$variable$}`, nested fields, optional filters — **without** deprecating math formulas  
 **Goal:** Lightweight substitution across markdown surfaces, **uCode v4** session keys, and spatial/gameplay context — precursor to full uCode evaluator in [`uDosConnect/uDosDev/docs/future/uDos-v4-gameplay-chatdown-development-cycle-brief.md`](../../../uDosConnect/uDosDev/docs/future/uDos-v4-gameplay-chatdown-development-cycle-brief.md) (family future brief)
 
-**Related family specs:** [GFM Enhanced](../../../uDosConnect/uDosDev/docs/specs/v4/GFM_Enhanced_Specification_v4.md) · [CONTACT_SCHEMA_v4](../../../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md) · [uDos-Grid](../../../uDosConnect/uDosDev/docs/specs/v4/uDos-Grid-Spec-v4-2-1.md) · [TASK_SPEC_v4](../../../uDosConnect/uDosDev/docs/specs/v4/TASK_SPEC_v4.md)
+**Related family specs:** **[UCODE v4](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md)** (full language + commands) · [GFM Enhanced](../../../uDosConnect/uDosDev/docs/specs/v4/GFM_Enhanced_Specification_v4.md) · [CONTACT_SCHEMA_v4](../../../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md) · [uDos-Grid](../../../uDosConnect/uDosDev/docs/specs/v4/uDos-Grid-Spec-v4-2-1.md) · [TASK_SPEC_v4](../../../uDosConnect/uDosDev/docs/specs/v4/TASK_SPEC_v4.md)
 
 ---
 
@@ -221,37 +221,16 @@ variables:
 
 ---
 
-## 10. uCode v4 — commands reference (stub)
+## 10. uCode v4 — commands and grammar (canonical)
 
-> **To be completed:** full command grammar and registry will be appended in **§11** (next handoff).  
-> Placeholder shapes only — do not implement literally until the follow-up doc lands.
+The **complete** uCode v4 language — command DSL, scripting keywords, `POKE`/MCP, symbol rules, Go package layout, and future TypeScript `.mdx` bridge — is **locked** in uDosDev:
 
-| Command family | Draft syntax | Purpose |
-| --- | --- | --- |
-| `VAR` | `[VAR|SET*NAME*value]` | Set session variable |
-| `VAR` | `[VAR|GET*NAME]` | Get session variable |
-| `VAR` | `[VAR|CLEAR*NAME]` | Clear session key |
-| *TBD* | *TBD* | *Reserved for MCP bridge (`[MCP|CALL*…]`) per uDosDev uCode TUI brief* |
+- **[`UCODE_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md)** (`~/Code/uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md`)
 
-**Escape / delimiter rules:** TBD — must not collide with `[COMMAND|ACTION*PARAM]` from [future uCode TUI brief](../../../uDosConnect/uDosDev/docs/future/uDos-v4-gameplay-chatdown-development-cycle-brief.md).
+This document (**uDos Variables**) only defines **`$variable$` interpolation** in markdown surfaces and how namespaces map to family schemas. Session `LET` / inline `$x$` behaviour follows **UCODE v4** when the interpreter is present.
 
 ---
 
-## 11. uCode v4 — commands reference (expanded) — *scaffold*
+## 11. One-line summary (this doc)
 
-Paste the full command tables and examples from the next author handoff into this section. Until then, the block below is a **placeholder only**.
-
-```markdown
-<!-- Paste expanded command tables and examples from the next handoff below. -->
-
-| # | Command | Args | Notes |
-| --- | --- | --- | --- |
-| | | | |
-
-```
-
----
-
-## 12. One-line summary
-
-**Inkdown `$...$` math stays.** **uDos Variables v4** adds `$VAR$` and dotted paths for core, contact, story, spatial, gameplay, and project keys — with frontmatter first and **uCode v4** session verbs in **Phase B**; heavy formula and conditionals in **Phase C**. **uDosGo** owns registry + MCP shape; Macdown/Chatdown/ThinUI are consumers.
+**Inkdown `$...$` math stays.** **uDos Variables v4** adds `$VAR$` and dotted paths for core, contact, story, spatial, gameplay, and project keys — with frontmatter first; full **uCode v4** syntax and runtime are in **[UCODE_v4.md](../../../uDosConnect/uDosDev/docs/specs/v4/UCODE_v4.md)**. **uDosGo** owns registry + MCP shape; Macdown/Chatdown/ThinUI are consumers.
