@@ -10,6 +10,7 @@ This monorepo implements the **runnable integration** slice of the family platfo
 
 | Theme | Specs | Direction for uDosGo |
 | --- | --- | --- |
+| **Round A — architecture** | [`ROUND_A_CORE_ARCHITECTURE_v4.md`](../../uDosConnect/uDosDev/docs/specs/v4/ROUND_A_CORE_ARCHITECTURE_v4.md) | **Locked** — reference implementation, governance split, vault; pair with [ARCHITECTURE.md](ARCHITECTURE.md) |
 | **Core + grid** | [`uDos-Spec-v4.md`](../../uDosConnect/uDosDev/docs/specs/v4/uDos-Spec-v4.md), [`uDos-Grid-Spec-v4-2-1.md`](../../uDosConnect/uDosDev/docs/specs/v4/uDos-Grid-Spec-v4-2-1.md) | Reconcile with [ARCHITECTURE.md](ARCHITECTURE.md), [GRID-GRAPHICS-CANON.md](GRID-GRAPHICS-CANON.md), ThinUI + `packages/shared` |
 | **Spatial + storage** | [`SPATIAL_STORAGE_ECOSYSTEM_v1.md`](../../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_STORAGE_ECOSYSTEM_v1.md) | **Locked** — uCell / uTile / uGrid / uCoin / uRing vocabulary and economics; map + NFC alignment (**v4.4.0** in consolidated rounds plan) |
 | **uSpace / cloud fallback** | [`SPATIAL_HOSTING_USPACE_CLOUD_FALLBACK_v1.md`](../../uDosConnect/uDosDev/docs/specs/v4/SPATIAL_HOSTING_USPACE_CLOUD_FALLBACK_v1.md) | **Locked** — published **uTile** cloud fallback tiers, free tier, view limits, bundled examples (**v4.4.0**) |

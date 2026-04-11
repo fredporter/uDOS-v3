@@ -15,6 +15,7 @@ These files are the **engineering handoff** line for the uDos family. They infor
 | Spec | Path (sibling `uDosConnect`) | Role in **uDosGo** (this monorepo) |
 | --- | --- | --- |
 | Core platform | [`uDos-Spec-v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/uDos-Spec-v4.md) | North star for Host / ThinUI / Hivemind boundaries; scope checks against [SCOPE-v3.0.1.md](../SCOPE-v3.0.1.md) |
+| Round A — core architecture | [`ROUND_A_CORE_ARCHITECTURE_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/ROUND_A_CORE_ARCHITECTURE_v4.md) | **Locked** — uDosGo vs uDosConnect vs vault; maps to [ARCHITECTURE.md](../ARCHITECTURE.md) |
 | GFM Enhanced | [`GFM_Enhanced_Specification_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/GFM_Enhanced_Specification_v4.md) | Authoring rules for vault markdown, feed text, and operator-visible docs |
 | Task syntax | [`TASK_SPEC_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/TASK_SPEC_v4.md) | Aligns Hivemind task graph + events with family task grammar |
 | Contact schema | [`CONTACT_SCHEMA_v4.md`](../../../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md) | Informs `packages/schemas` contact shape + WordPress bridge |

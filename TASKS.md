@@ -10,6 +10,8 @@ Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uD
 
 ## Done
 
+- [x] [UDGO-R14] **Round A: Core architecture v4 (uDosDev)** — [`ROUND_A_CORE_ARCHITECTURE_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/ROUND_A_CORE_ARCHITECTURE_v4.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); uDosDev **[UDEV-R20](../uDosConnect/uDosDev/TASKS.md)** #docs #core
+
 - [x] [UDGO-R13] **UniversalVectorIL (UVIL) v1 — locked boundary (uDosDev)** — [`UNIVERSAL_VECTOR_IL_UVIL_v1.md`](../uDosConnect/uDosDev/docs/specs/v4/UNIVERSAL_VECTOR_IL_UVIL_v1.md); [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); uDosDev **[UDEV-R19](../uDosConnect/uDosDev/TASKS.md)** #docs #core
 
 - [x] [UDGO-R12] **Unified data schema WP / HubSpot / uDos v1 (uDosDev)** — [`UNIFIED_DATA_SCHEMA_WP_HUBSPOT_uDOS_v1.md`](../uDosConnect/uDosDev/docs/specs/v4/UNIFIED_DATA_SCHEMA_WP_HUBSPOT_uDOS_v1.md); [`CONTACT_SCHEMA_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/CONTACT_SCHEMA_v4.md) cross-link; [`docs/specs/README.md`](docs/specs/README.md); [`docs/ROADMAP.md`](docs/ROADMAP.md); [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md) §5; [`docs/specs/uDos-variables-ucode-v4.md`](docs/specs/uDos-variables-ucode-v4.md); uDosDev **[UDEV-R18](../uDosConnect/uDosDev/TASKS.md)** #docs #core

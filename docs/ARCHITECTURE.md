@@ -25,7 +25,7 @@
 
 **Rule:** ThinUI and Hivemind do not own the disk truth. **Host** is the system of record for spool, tasks, events, and vault writes initiated by tools. WordPress owns its own DB/files under Host-provisioned paths.
 
-**Family v4 boundary:** Governance and locked specs live in **uDosConnect** (`uDosDev/docs/specs/v4/`). **This monorepo** ships the runnable Host + Hivemind + ThinUI integration and links that catalog from [specs/README.md](specs/README.md); it does not duplicate the full spec corpus in-tree.
+**Family v4 boundary:** Governance and locked specs live in **uDosConnect** (`uDosDev/docs/specs/v4/`). **Round A (locked)** — [`ROUND_A_CORE_ARCHITECTURE_v4.md`](../uDosConnect/uDosDev/docs/specs/v4/ROUND_A_CORE_ARCHITECTURE_v4.md): uDosGo as reference implementation, uDosConnect as governance-only, vault as shared state. **This monorepo** ships the runnable Host + Hivemind + ThinUI integration and links that catalog from [specs/README.md](specs/README.md); it does not duplicate the full spec corpus in-tree.
 
 ---
 
