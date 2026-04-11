@@ -62,6 +62,8 @@ These files are the **engineering handoff** line for the uDos family. They infor
 | --- | --- |
 | [uDos-variables-ucode-v4.md](uDos-variables-ucode-v4.md) | **Draft** — `$variable$` interpolation (Inkdown `$...$` math preserved), namespaces, phased roadmap, **uCode v4** `[VAR|…]` stub + scaffold for full command reference |
 | [RETRO_COMMAND_ALIASES_v4.md](RETRO_COMMAND_ALIASES_v4.md) | **Locked** — retro BASIC-style CLI aliases (`PEEK`/`POKE`, `DIR`, `TYPE`, …); **`@udos/shared`** `retro-command-aliases.ts` |
+| Sonic v4 (family) | [uDosDev `SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md`](../../../uDosConnect/uDosDev/docs/specs/v4/SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md) — locked umbrella; Ventoy/USXD/uDosDocs/**blocktext** |
+| Colour — Sonic & USXD (family) | [uDosDev `COLOUR_SPEC_v4_ADDENDUM_SONIC_USXD.md`](../../../uDosConnect/uDosDev/docs/specs/v4/COLOUR_SPEC_v4_ADDENDUM_SONIC_USXD.md) |
 
 ---
 
@@ -82,6 +84,7 @@ These files are the **engineering handoff** line for the uDos family. They infor
 | `packages/schemas/usxd-surface.schema.json` | JSON Schema (subset) |
 | `examples/usxd-surface-canonical.example.json` | Canonical example |
 | `examples/usxd-surface-minimal.example.json` | Minimal valid surface (schema floor) |
+| `examples/usxd-ventoy-boot-menu.example.json` | Ventoy boot menu launcher (teletext, `uvil://` splash tile) — **[SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md](../../../uDosConnect/uDosDev/docs/specs/v4/SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md)** §8 |
 | `npm run validate:usxd` | AJV check for **all** `usxd/0.1` surfaces under `examples/` (first step of `npm run build`); `validate:usxd:verbose` lists skips |
 | `npm run validate:usxd:sibling` | If **`~/Code/UniversalSurfaceXD`** exists (or `UNIVERSAL_SURFACE_XD_ROOT`), runs that repo’s `ux:validate-surfaces`; otherwise **skip** (exit 0). |
 | `npm run validate:usxd:parity` | `validate:usxd` **then** sibling lab check — use before integration merges when both clones are present. |

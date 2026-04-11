@@ -43,7 +43,8 @@
     "validate:usxd:sibling": "node scripts/validate-usxd-sibling-lab.mjs",
     "validate:usxd:parity": "npm run validate:usxd && npm run validate:usxd:sibling",
     "doc:drift": "node scripts/check-doc-drift.mjs",
-    "retro:line": "npm run build -w @udos/shared && node scripts/retro-alias-line.mjs"
+    "retro:line": "npm run build -w @udos/shared && node scripts/retro-alias-line.mjs",
+    "blocktext": "node scripts/blocktext.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

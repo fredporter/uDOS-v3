@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "usxd/0.1",
+  "id": "ventoy-boot-menu",
+  "type": "surface",
+  "title": "uDOS Sonic Boot",
+  "kind": "launcher",
+  "mode": "canonical",
+  "grid": {
+    "cols": 80,
+    "rows": 30,
+    "tile_px": { "w": 16, "h": 24 }
+  },
+  "render": { "mode": "teletext" },
+  "teletext": {
+    "cell_width": 16,
+    "cell_height": 24,
+    "mosaic": { "cols": 2, "rows": 3, "style": "acorn" },
+    "fallback": ["ascii-block", "shades", "ascii"]
+  },
+  "theme": { "family": "thinui-teletext" },
+  "regions": [
+    { "id": "header", "x": 0, "y": 0, "w": 80, "h": 8, "role": "header" },
+    { "id": "menu", "x": 0, "y": 8, "w": 80, "h": 16, "role": "primary" },
+    { "id": "footer", "x": 0, "y": 24, "w": 80, "h": 6, "role": "status" }
+  ],
+  "objects": [
+    {
+      "id": "splash",
+      "type": "component.Tile",
+      "region": "header",
+      "props": {
+        "src": "uvil://tile/udos-splash",
+        "format": "teletext-2x6"
+      }
+    },
+    {
+      "id": "menu-list",
+      "type": "surface.list",
+      "region": "menu",
+      "items": [
+        { "label": "uDOS Ubuntu — Live", "action": "boot" },
+        { "label": "uDOS Ubuntu — Install", "action": "boot" },
+        { "label": "uDOS Ubuntu — Recovery", "action": "boot" },
+        { "label": "Tools — Disk Utility", "action": "boot" },
+        { "label": "Tools — Memory Test", "action": "boot" },
+        { "label": "System — Boot Local Disk", "action": "exit" }
+      ]
+    }
+  ]
+}

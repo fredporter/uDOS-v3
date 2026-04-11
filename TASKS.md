@@ -10,6 +10,8 @@ Task layout (family dev standard **v4**). **Family rounds index:** [`../uDosConn
 
 ## Done
 
+- [x] [UDGO-R21] **Sonic v4 brief + colour addendum + blocktext (family lock)** — uDosDev [`SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md`](../uDosConnect/uDosDev/docs/specs/v4/SONIC_SCREWDRIVER_v4_COMPLETE_BRIEF.md), [`COLOUR_SPEC_v4_ADDENDUM_SONIC_USXD.md`](../uDosConnect/uDosDev/docs/specs/v4/COLOUR_SPEC_v4_ADDENDUM_SONIC_USXD.md); uDosGo [`examples/usxd-ventoy-boot-menu.example.json`](examples/usxd-ventoy-boot-menu.example.json), [`scripts/blocktext.mjs`](scripts/blocktext.mjs), [`docs/specs/README.md`](docs/specs/README.md); INTEGRATION cross-link #docs #core
+
 - [x] [UDGO-R20] **Retro BASIC command aliases (v4)** — [`docs/specs/RETRO_COMMAND_ALIASES_v4.md`](docs/specs/RETRO_COMMAND_ALIASES_v4.md); [`packages/shared/src/retro-command-aliases.ts`](packages/shared/src/retro-command-aliases.ts); ThinUI feed submit + Host `metadata.retroAlias`; `npm run retro:line`; [`docs/specs/README.md`](docs/specs/README.md) hub row #docs #core
 
 - [x] [UDGO-R19] **uDos v4 execution plan — versioned Moves (uDosDev)** — [`uDos-v4-execution-plan-versioned-moves.md`](../uDosConnect/uDosDev/docs/future/uDos-v4-execution-plan-versioned-moves.md); [`docs/README.md`](docs/README.md) hub link; uDosDev **[UDEV-R25](../uDosConnect/uDosDev/TASKS.md)** #docs #core
