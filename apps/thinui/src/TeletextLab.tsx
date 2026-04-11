@@ -4,6 +4,7 @@ import {
   CANONICAL_TILE_PX_W,
   TELETEXT_SUBCELL_PX,
 } from "@udos/shared";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 /** Visual scale so one 16×24 logical cell is easy to see on screen. */
 const SCALE = 8;
@@ -34,9 +35,12 @@ export function TeletextLab() {
             scaled ×{SCALE}.
           </p>
         </div>
-        <a className="btn-link" href="#/">
-          ← ThinUI home
-        </a>
+        <div className="top__actions">
+          <ThemeSwitcher />
+          <a className="btn-link" href="#/">
+            ← ThinUI home
+          </a>
+        </div>
       </header>
 
       <div className="teletext-lab__demo">

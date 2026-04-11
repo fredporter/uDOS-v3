@@ -7,7 +7,11 @@ import {
   CANONICAL_VIEWPORT_ROWS,
 } from "@udos/shared";
 import { Shell } from "./Shell";
+import { getInitialTheme, setThinUiTheme } from "./theme";
 import "./styles.css";
+import "./classic-modern.css";
+
+setThinUiTheme(getInitialTheme());
 
 const rootEl = document.documentElement;
 rootEl.style.setProperty(

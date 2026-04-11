@@ -1,0 +1,185 @@
+/**
+ * Classic Modern — browser shell (uDosDev CLASSIC_MODERN_INSPIRATION_KIT_v1 + Round D `--cm-*`).
+ * Fonts: symlink `apps/thinui/public/fonts` → `~/Code/fonts` (see apps/thinui/FONTS.md).
+ * Paths assume `apple-fonts/` contains ChicagoFLF, pixChicago, geneva_9, monaco (TTF).
+ */
+
+@font-face {
+  font-family: "ChicagoClassic";
+  src: url("/fonts/apple-fonts/ChicagoFLF.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ChicagoClassic";
+  src: url("/fonts/apple-fonts/pixChicago.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GenevaClassic";
+  src: url("/fonts/apple-fonts/geneva_9.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonacoClassic";
+  src: url("/fonts/apple-fonts/monaco.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html[data-thinui-theme="classic-modern"] {
+  /* Foundation + inspiration (see tokens/classic-modern-inspiration.yaml) */
+  --cm-bg: #e8e8e8;
+  --cm-surface: #f2f2f2;
+  --cm-border: #222222;
+  --cm-text: #111111;
+  --cm-accent: #3a7bd5;
+  --cm-muted: #4a4a4a;
+  --apple-platinum-light: #e8e8e8;
+  --apple-platinum-dark: #b8b8b8;
+  --grad-title: linear-gradient(to bottom, #d4d4d4 0%, #b8b8b8 100%);
+
+  font-family: "GenevaClassic", Inter, system-ui, sans-serif;
+  color: var(--cm-text);
+  background-color: var(--cm-bg);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+html[data-thinui-theme="classic-modern"] body {
+  min-height: 100vh;
+}
+
+html[data-thinui-theme="classic-modern"] h1,
+html[data-thinui-theme="classic-modern"] h2 {
+  font-family: "ChicagoClassic", "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+html[data-thinui-theme="classic-modern"] .top {
+  padding: 10px 14px;
+  margin: -8px -12px 16px;
+  border-bottom: 1px solid #000;
+  background: var(--grad-title);
+  border-radius: 0;
+}
+
+html[data-thinui-theme="classic-modern"] .muted {
+  color: var(--cm-muted);
+}
+
+html[data-thinui-theme="classic-modern"] .panel {
+  border: 1px solid var(--cm-border);
+  border-radius: 4px;
+  background: var(--cm-surface);
+  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #888;
+}
+
+html[data-thinui-theme="classic-modern"] .input {
+  border: 1px solid var(--cm-border);
+  background: #fff;
+  color: var(--cm-text);
+  border-radius: 4px;
+}
+
+html[data-thinui-theme="classic-modern"] .input:focus {
+  border-color: var(--cm-accent);
+}
+
+html[data-thinui-theme="classic-modern"] button {
+  border: 1px solid var(--cm-border);
+  background: linear-gradient(to bottom, #f6f6f6 0%, #d8d8d8 100%);
+  color: var(--cm-text);
+  border-radius: 4px;
+  font-family: "ChicagoClassic", "Courier New", monospace;
+}
+
+html[data-thinui-theme="classic-modern"] button:hover {
+  border-color: #000;
+}
+
+html[data-thinui-theme="classic-modern"] code,
+html[data-thinui-theme="classic-modern"] pre {
+  font-family: "MonacoClassic", ui-monospace, monospace;
+}
+
+html[data-thinui-theme="classic-modern"] .pre {
+  background: #fff;
+  border: 1px solid var(--cm-border);
+  color: var(--cm-text);
+}
+
+html[data-thinui-theme="classic-modern"] .banner.error {
+  background: #ffe0e0;
+  color: #600;
+  border-color: #800;
+}
+
+html[data-thinui-theme="classic-modern"] .task-group {
+  border-top-color: #ccc;
+}
+
+html[data-thinui-theme="classic-modern"] .parity-footer {
+  background: var(--apple-platinum-light);
+  border: 1px solid var(--cm-border);
+  color: var(--cm-muted);
+}
+
+html[data-thinui-theme="classic-modern"] .parity-footer a {
+  color: var(--cm-accent);
+}
+
+html[data-thinui-theme="classic-modern"] .provider-strip,
+html[data-thinui-theme="classic-modern"] .vault-strip {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+html[data-thinui-theme="classic-modern"] .feed-meta {
+  color: var(--cm-muted);
+}
+
+html[data-thinui-theme="classic-modern"] .ev-type {
+  color: var(--cm-accent);
+}
+
+/* Teletext lab: keep mosaic blocks on dark cells for contrast */
+html[data-thinui-theme="classic-modern"] .teletext-lab__block {
+  border: 1px solid #000;
+}
+
+html[data-thinui-theme="classic-modern"] .theme-switcher label {
+  font-family: "ChicagoClassic", "Courier New", monospace;
+  font-size: 0.82rem;
+  color: var(--cm-muted);
+}
+
+html[data-thinui-theme="classic-modern"] .theme-switcher select {
+  font: inherit;
+  padding: 6px 8px;
+  border: 1px solid var(--cm-border);
+  border-radius: 4px;
+  background: #fff;
+}
+
+html[data-thinui-theme="classic-modern"] .btn-link {
+  border: 1px solid var(--cm-border);
+  background: linear-gradient(to bottom, #f6f6f6 0%, #d8d8d8 100%);
+  color: var(--cm-text);
+}
+
+html[data-thinui-theme="classic-modern"] .btn-link:hover {
+  border-color: #000;
+}

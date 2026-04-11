@@ -7,3 +7,6 @@ dist/
 .DS_Store
 .udos-data/
 demo/.wp-demo.env
+
+# ThinUI: local symlink/copies of ~/Code/fonts (see apps/thinui/FONTS.md)
+apps/thinui/public/fonts

@@ -47,6 +47,35 @@ pre {
   margin-bottom: 16px;
 }
 
+.top__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-switcher label {
+  font-size: 0.82rem;
+  color: #a9b0c0;
+  margin: 0;
+}
+
+.theme-switcher select {
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #2a3140;
+  background: #0b0e14;
+  color: #e8e8ec;
+}
+
 h1 {
   margin: 0 0 6px;
   font-size: 1.35rem;

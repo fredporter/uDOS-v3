@@ -14,6 +14,7 @@ import {
   type FeedItem,
   type Task,
 } from "@udos/sdk";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const hostUrl =
   import.meta.env.VITE_UDOS_HOST_URL ?? "http://127.0.0.1:8787";
@@ -282,9 +283,12 @@ export function App() {
             </p>
           ) : null}
         </div>
-        <button type="button" onClick={() => void refresh()}>
-          Refresh
-        </button>
+        <div className="top__actions">
+          <ThemeSwitcher />
+          <button type="button" onClick={() => void refresh()}>
+            Refresh
+          </button>
+        </div>
       </header>
 
       {error ? (
