@@ -10,7 +10,7 @@
 
 This repository is the **v3 monorepo target**. Implementation may start empty; the **planning pack** lives under [`docs/`](docs/) and [`packages/schemas/`](packages/schemas/).
 
-**Family v4 — Cursor / VS Code:** open **[`uDosGo.code-workspace`](uDosGo.code-workspace)** at the repo root (simple `../` paths to `~/Code/` siblings). **Focused lanes** (same repos, paths from `workspaces/`): [`workspaces/README.md`](workspaces/README.md) — `uDOS-v4.code-workspace`, `Linkdown-v4.code-workspace`, `Macdown-v4.code-workspace`.
+**Family v4 — Cursor / VS Code:** open **[`uDosGo.code-workspace`](uDosGo.code-workspace)** at the repo root (simple `../` paths to `~/Code/` siblings). **Focused lanes** (same repos, paths from `workspaces/`): [`workspaces/README.md`](workspaces/README.md) — `uDOS-v4.code-workspace`, `Linkdown-v4.code-workspace`, `uMacDown-v4.code-workspace`.
 
 ## One sentence
 
@@ -36,6 +36,7 @@ Not the whole uDOS family. Not the full product vision. **One clean loop.**
 | [docs/SCOPE-v3.0.1.md](docs/SCOPE-v3.0.1.md) | In scope / out of scope (locked) |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Boundaries, data flow, module contracts |
 | [docs/specs/README.md](docs/specs/README.md) | **Specifications hub** (USXD, engines, schema paths, ThinUI lab) |
+| [docs/specs/RETRO_COMMAND_ALIASES_v4.md](docs/specs/RETRO_COMMAND_ALIASES_v4.md) | **Locked** — retro CLI aliases (`PEEK`/`POKE`, …) + `@udos/shared` resolver |
 | [docs/GRID-GRAPHICS-CANON.md](docs/GRID-GRAPHICS-CANON.md) | **Locked** 80×30, **16×24**, teletext bridge, UniversalSurfaceXD pairing |
 | [docs/style-guide.md](docs/style-guide.md) | **Style guide** — tokens, typography, USXD `usxd/0.1` frontmatter, ASCII vs teletext |
 | [docs/DEMO.md](docs/DEMO.md) | Gold-path scenario, expected outputs, operator steps |

@@ -1,6 +1,6 @@
 # TASKS.md — uDosGo
 
-Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uDosConnect/uDosDev/docs/v4-dev-rounds.md`](../uDosConnect/uDosDev/docs/v4-dev-rounds.md) (sibling layout under `~/Code/`).
+Task layout (family dev standard **v4**). **Family rounds index:** [`../uDosConnect/uDosDev/docs/v4-dev-rounds.md`](../uDosConnect/uDosDev/docs/v4-dev-rounds.md) (sibling layout under `~/Code/`).
 
 ## Backlog
 
@@ -9,6 +9,8 @@ Task Forge layout (family dev standard **v4**). **Family rounds index:** [`../uD
 ## Blocked
 
 ## Done
+
+- [x] [UDGO-R20] **Retro BASIC command aliases (v4)** — [`docs/specs/RETRO_COMMAND_ALIASES_v4.md`](docs/specs/RETRO_COMMAND_ALIASES_v4.md); [`packages/shared/src/retro-command-aliases.ts`](packages/shared/src/retro-command-aliases.ts) (`resolveRetroCommandLine`, `expandPokeLine`, `formatRetroHelpBanner`); [`docs/specs/README.md`](docs/specs/README.md) hub row #docs #core
 
 - [x] [UDGO-R19] **uDos v4 execution plan — versioned Moves (uDosDev)** — [`uDos-v4-execution-plan-versioned-moves.md`](../uDosConnect/uDosDev/docs/future/uDos-v4-execution-plan-versioned-moves.md); [`docs/README.md`](docs/README.md) hub link; uDosDev **[UDEV-R25](../uDosConnect/uDosDev/TASKS.md)** #docs #core
 

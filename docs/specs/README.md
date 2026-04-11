@@ -61,6 +61,7 @@ These files are the **engineering handoff** line for the uDos family. They infor
 | Document | Role |
 | --- | --- |
 | [uDos-variables-ucode-v4.md](uDos-variables-ucode-v4.md) | **Draft** — `$variable$` interpolation (Inkdown `$...$` math preserved), namespaces, phased roadmap, **uCode v4** `[VAR|…]` stub + scaffold for full command reference |
+| [RETRO_COMMAND_ALIASES_v4.md](RETRO_COMMAND_ALIASES_v4.md) | **Locked** — retro BASIC-style CLI aliases (`PEEK`/`POKE`, `DIR`, `TYPE`, …); **`@udos/shared`** `retro-command-aliases.ts` |
 
 ---
 

@@ -2,6 +2,10 @@
 
 **uDos** = **Universal Device Operating Surface** (canonical expansion from v3+). Capital **D** is intentional—do not “fix” to `udos` / `uDOS` in new work. From **dev standard v4**, prefer **uDos** in new/edited copy; leave historical **uDOS** until the file is revised ([dev-process-v4.md](docs/dev-process-v4.md)). Do not introduce a separate “UDO” / “UDOs” acronym in this family’s docs (reserved elsewhere in the market).
 
+## Shell / CLI aliases (v4)
+
+- **Retro BASIC → modern commands:** [`docs/specs/RETRO_COMMAND_ALIASES_v4.md`](docs/specs/RETRO_COMMAND_ALIASES_v4.md) — **`@udos/shared`** [`packages/shared/src/retro-command-aliases.ts`](packages/shared/src/retro-command-aliases.ts) (`resolveRetroCommandLine`, etc.). Wire Host / future Shell TUI to resolve a line before dispatch.
+
 ## Scope
 
 - **This repo** is the **runnable integration monorepo** (Host, ThinUI, Hivemind, schemas, demo). On GitHub: **[uDosGo](https://github.com/fredporter/uDosGo)** (`fredporter/uDosGo`). Local folder: **`~/Code/uDosGo/`**. Prefer **`main`**; short-lived branches only with a clear reason.
@@ -9,7 +13,7 @@
 
 ## Dev standard (v4)
 
-- **Tasks:** root [`TASKS.md`](TASKS.md) — Task Forge sections (Backlog / In Progress / Blocked / Done).
+- **Tasks:** root [`TASKS.md`](TASKS.md) — **Task** surface: Backlog / In Progress / Blocked / Done.
 - **Process:** [`docs/dev-process-v4.md`](docs/dev-process-v4.md), checklist [`docs/dev-checklist-v4.md`](docs/dev-checklist-v4.md).
 - **Scratch:** use **`.local/`** (untracked). **`.compost/`** for discarded file copies — both must remain **gitignored**. **Doc consolidation plan:** [`docs/dev/docs-v4-consolidation-plan.md`](docs/dev/docs-v4-consolidation-plan.md).
 
